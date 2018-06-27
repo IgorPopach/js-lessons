@@ -52,45 +52,47 @@
 // console.log(res);
 // console.log(typeof(res));
 
-var a = 110, b = 220;
-if ( a > b ) {
-    console.log("a: " + a + " b: " + b);
-}
-else if ( a < b ) {
-    console.log("a < b");
-}
-else {
-    console.log("a = b");
-}
-
-
-var a = "5";
-var b = 5;
-if ( a === b ) {
-    console.log(true);
-}
-else {
-    console.log(false);
-}
-
-var a = 5;
-var b = 10;
-var sign = "-";
-// if (sign === "-") {
-//     console.log(a - b);
-// } else if (sign === "+") {
-//     console.log(a + b);
-// } else if (sign === "*") {
-//     console.log(a * b);
-// } else {
-//     console.log(a / b);
+// var a = 110, b = 220;
+// if ( a > b ) {
+//     console.log("a: " + a + " b: " + b);
+// }
+// else if ( a < b ) {
+//     console.log("a < b");
+// }
+// else {
+//     console.log("a = b");
+// }
+//
+//
+// var a = "5";
+// var b = 5;
+// if ( a === b ) {
+//     console.log(true);
+// }
+// else {
+//     console.log(false);
+// }
+//
+// var a = 5;
+// var b = 10;
+// var sign = "-";
+// // if (sign === "-") {
+// //     console.log(a - b);
+// // } else if (sign === "+") {
+// //     console.log(a + b);
+// // } else if (sign === "*") {
+// //     console.log(a * b);
+// // } else {
+// //     console.log(a / b);
+// // }
+//
+// switch ( sign ) {
+//     case "+" : console.log(a + b);
+//     break;
+//     case "-" : console.log(a - b);
+//     break;
+//     default : console.log("R.T.F.M.");
+//     break;
 // }
 
-switch ( sign ) {
-    case "+" : console.log(a + b);
-    break;
-    case "-" : console.log(a - b);
-    break;
-    default : console.log("R.T.F.M.");
-    break;
-}
+
