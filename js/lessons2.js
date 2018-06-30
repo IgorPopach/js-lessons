@@ -46,13 +46,7 @@
 // document.write(i);
 
 
-// for (var i = 0; i < 10; i++) {
-//     for (var j = 10; j > 0; j--) {
-//         document.write("*" + "<br>");
-//     }
-//     document.write("<br>");
-// }
-
+// //rectangular triangle
 // for (var i = 0; i < 10; i++) {
 //     for (var j = 0; j < i; j++) {
 //         document.write("*");
@@ -60,13 +54,27 @@
 //     document.write("<br>");
 // }
 
-for (var i = 0; i < 10; i++) {
-    for (var j = 10; j > i; j--) {
-        document.write(" ");
-    }
-    document.write("*" + "<br>");
-}
+// // equilateral triangle
+// for (var i = 0; i < 10; i++) {
+//     for (var k = 9; k > i; k--) {
+//         document.write("&nbsp;");
+//     }
+//     for (var j = 0; j < i; j++) {
+//         document.write("*");
+//     }
+//     document.write("<br>");
+// }
 
+
+// for (var i = 0; i < 10; i++) {
+//     for (var j = 10; j > i; j--) {
+//         document.write("&nbsp;");
+//     }
+//     document.write("*" + "<br>");
+// }
+
+
+// //calculator
 // for (var i = 1; i < 10; i++) {
 //     for (var j = 1; j < 10; j++) {
 //         var result = i * j;
@@ -74,3 +82,4 @@ for (var i = 0; i < 10; i++) {
 //     }
 //     document.write("<br>");
 // }
+
