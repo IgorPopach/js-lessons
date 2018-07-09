@@ -116,3 +116,12 @@ function burgerShop() {
     }
 
 }
+
+
+function yourName() {
+    var name = prompt("введіть будь-ласка ваші ПІБ через пробіл","");
+    var arr = name.split('\u0020');
+    // var arr1 =
+    document.write("Прізвище: " + arr[0] + "<br>"
+    + "Ім'я: " + arr[1] + "<br>" + "По-батькові: " + arr[2]);
+}
