@@ -83,16 +83,16 @@
 // }
 
 
-// Для роботи з масивами for in:
-var arr = [1,2,3,"four",29,"Bill",true];
-console.log(arr);
-console.log(typeof(arr));
-// for (item in arr){
-//     console.log(item)
+// // Для роботи з масивами for in:
+// var arr = [1,2,3,"four",29,"Bill",true];
+// console.log(arr);
+// console.log(typeof(arr));
+// // for (item in arr){
+// //     console.log(item)
+// // }
+// console.log(arr[3]);
+// for (item in arr) {
+//     console.log(arr[item])
 // }
-console.log(arr[3]);
-for (item in arr) {
-    console.log(arr[item])
-}
 
 
