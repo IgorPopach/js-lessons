@@ -59,9 +59,8 @@
 //     document.write(arrCopy[i] + '<br>');
 // }
 
-var credit1 = [];
-var arr = [];
-document.addEventListener("load",Init());
+var CreditDB = [];
+window.addEventListener("load",Init());
 function Init() {
     var btn = document.getElementsByClassName("check")[0];
     btn.addEventListener("click", getForm);
@@ -72,13 +71,44 @@ function getForm() {
     var name = document.getElementsByName("name")[0].value;
     var credit = document.getElementsByName("credit")[0].value;
     var term = document.getElementsByName("term")[0].value;
-    credit1.push([surname,name,credit,term]);
-    console.log(credit1);
-    name.innerHTML('Позичальник:' + credit1[0][0] + ' ' + credit1[0][1]);
+    printTable(surname, name, credit, term);
 }
 
-for (var i = 0; i < 3; i++) {
-    arr[i] = credit1;
-    // console.log(arr);
+var id = 0;
+function printTable(surname, name, credit, term) {
+    id++;
+    CreditDB.push([surname,name,credit,term]);
+    var ele = document.getElementById('creditInfo');
+    for (var i = 0; i < CreditDB.length; i++ ){
+        var tr = document.createElement('tr');
+        var tdId = document.createElement('td');
+        var tdName = document.createElement('td');
+        var tdSurname = document.createElement('td');
+        var tdAmount = document.createElement('td');
+        var tdTerm = document.createElement('td');
+        var idShow = document.createTextNode(CreditDB[i][0]);
+        var nameShow = document.createTextNode(CreditDB[i][1]);
+        var surnameShow = document.createTextNode(CreditDB[i][2]);
+        var amoutShow = document.createTextNode(CreditDB[i][3]);
+        var termShow = document.createTextNode(CreditDB[i][4]);
+        tdId.appendChild(idShow);
+        tdName.appendChild(nameShow);
+        tdSurname.appendChild(surnameShow);
+        tdAmount.appendChild(amoutShow);
+        tdTerm.appendChild(termShow);
+        tr.appendChild(tdId);
+        tr.appendChild(tdName);
+        tr.appendChild(tdSurname);
+        tr.appendChild(tdAmount);
+        tr.appendChild(tdTerm);
+        tr.addEventListener("click", showPersonal);
+    }
+    ele.appendChild(tr);
 }
+
+function showPersonal() {
+    alert(this.previousElementSibling.innerHTML);
+}
+
+
 

@@ -1,0 +1,25 @@
+body {
+    background-color: rebeccapurple;
+}
+.box {
+    border: 4px double navajowhite;
+    border-radius: 5px;
+    padding: 10px;
+}
+.box label {
+    color: #ffffff;
+}
+.box input {
+    width: 100%;
+}
+.btn {
+    text-align: right;
+    margin-top: 15px;
+}
+.check {
+    padding: 4px 6px;
+    background-color: rebeccapurple;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: #ffffff;
+}
