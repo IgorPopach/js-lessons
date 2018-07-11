@@ -16,7 +16,7 @@
 //     document.write(arr[i] + '<br>');
 // }
 
-var arr = ['Понеділок', 'Вівторок', 'Середа'];
+// var arr = ['Понеділок', 'Вівторок', 'Середа'];
 // var str = arr.join(':');
 // document.write(str);
 
@@ -69,20 +69,16 @@ function Init() {
 
 function getForm() {
     var surname = document.getElementsByName('surname')[0].value;
-    console.log(surname);
     var name = document.getElementsByName("name")[0].value;
-    console.log(name);
     var credit = document.getElementsByName("credit")[0].value;
-    console.log(credit);
     var term = document.getElementsByName("term")[0].value;
-    console.log(term);
-    credit1 = [surname,name,credit,term];
+    credit1.push([surname,name,credit,term]);
     console.log(credit1);
+    name.innerHTML('Позичальник:' + credit1[0][0] + ' ' + credit1[0][1]);
 }
-for (var i = 0; i < credit1.length; i++) {
-    arr.push(credit1[i][0]);
-    arr.push(credit1[i][1]);
-    arr.push(credit1[i][2]);
-    arr.push(credit1[i][3]);
-    console.log(arr);
+
+for (var i = 0; i < 3; i++) {
+    arr[i] = credit1;
+    // console.log(arr);
 }
+
