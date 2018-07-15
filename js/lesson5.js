@@ -77,7 +77,7 @@ function getForm() {
 var id = 0;
 function printTable(surname, name, credit, term) {
     id++;
-    CreditDB.push([surname,name,credit,term]);
+    CreditDB.push([id,surname,name,credit,term]);
     var ele = document.getElementById('creditInfo');
     for (var i = 0; i < CreditDB.length; i++ ){
         var tr = document.createElement('tr');
@@ -101,13 +101,52 @@ function printTable(surname, name, credit, term) {
         tr.appendChild(tdSurname);
         tr.appendChild(tdAmount);
         tr.appendChild(tdTerm);
-        tr.addEventListener("click", showPersonal);
+        tr.addEventListener("click", showPersonalId);
     }
     ele.appendChild(tr);
 }
 
-function showPersonal() {
-    alert(this.previousElementSibling.innerHTML);
+function showPersonalId() {
+    // alert(this.cells[0].innerHTML);
+    var surname = (this.cells[1].innerHTML);
+    var name = (this.cells[2].innerHTML);
+    var table = document.getElementById('creditInfo');
+    // alert(table.rows.length);
+    for ( var i = 0; i < table.rows.length; i++ ) {
+        if ( CreditDB[i][1] == surname && CreditDB[i][2] == name ) {
+            alert('good');
+            var eleList = document.getElementById('personalInfo');
+            for (var j = 0; j < CreditDB.length; j++ ){
+                var tr = document.createElement('tr');
+                var tdId = document.createElement('td');
+                var tdName = document.createElement('td');
+                var tdSurname = document.createElement('td');
+                var tdAmount = document.createElement('td');
+                var tdTerm = document.createElement('td');
+                var idShow = document.createTextNode(CreditDB[i][0]);
+                var nameShow = document.createTextNode(CreditDB[i][1]);
+                var surnameShow = document.createTextNode(CreditDB[i][2]);
+                var amoutShow = document.createTextNode(CreditDB[i][3]);
+                var termShow = document.createTextNode(CreditDB[i][4]);
+                var tdDebt = document.createElement('td');
+                var debtShow = document.createTextNode( CreditDB[i][3] * CreditDB[i][4] * 0.04 );
+                tdId.appendChild(idShow);
+                tdName.appendChild(nameShow);
+                tdSurname.appendChild(surnameShow);
+                tdAmount.appendChild(amoutShow);
+                tdTerm.appendChild(termShow);
+                tdDebt.appendChild(debtShow);
+                tr.appendChild(tdId);
+                tr.appendChild(tdName);
+                tr.appendChild(tdSurname);
+                tr.appendChild(tdAmount);
+                tr.appendChild(tdTerm);
+                tr.appendChild(tdDebt);
+            }
+            eleList.appendChild(tr);
+        }
+    }
+
 }
 
 

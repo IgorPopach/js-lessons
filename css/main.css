@@ -5,6 +5,8 @@ body {
     border: 4px double navajowhite;
     border-radius: 5px;
     padding: 10px;
+    margin-bottom: 30px;
+    color: #ffffff;
 }
 .box label {
     color: #ffffff;
@@ -16,10 +18,23 @@ body {
     text-align: right;
     margin-top: 15px;
 }
+
 .check {
+    display: inline-block;
     padding: 4px 6px;
     background-color: rebeccapurple;
     border: 1px solid white;
     border-radius: 5px;
     color: #ffffff;
+}
+.check:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 3px white;
+}
+
+.personal-info {
+    color: white;
+}
+.personal-info table {
+    text-align: center;
 }
