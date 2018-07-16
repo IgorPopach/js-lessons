@@ -75,6 +75,7 @@ function getForm() {
 }
 
 var id = 0;
+var count = 0;
 function printTable(surname, name, credit, term) {
     id++;
     CreditDB.push([id,surname,name,credit,term]);
@@ -103,18 +104,41 @@ function printTable(surname, name, credit, term) {
         tr.appendChild(tdTerm);
         tr.addEventListener("click", showPersonalId);
     }
+
+    var table = document.getElementById('creditInfo');
+    for ( var j = 0; j < table.rows.length; j++ ) {
+        if ( surname == CreditDB[j][1] ) {
+            count++;
+            console.log (count);
+            if ( count - 1 == 3 ) {
+                alert('Упс! У Вас вже є 3 кредита! Більше не можна!:(');
+            }
+        }
+    }
+
+
+    // var table = document.getElementById('creditInfo');
+    // for ( var k = 0; k < table.rows.length; k++ ) {
+    //     for ( var j = 0; j < table.rows.length; j++ ) {
+    //         if ( k != j && CreditDB[k][1] == CreditDB[j][1] && CreditDB[k][2] == CreditDB[j][2] ) {
+    //             count++;
+    //             console.log(count);
+    //             if ( count = 8 ) {
+    //                 alert ('Упс! У Вас вже є 3 кредита! Більше не можна!:(');
+    //                 break;
+    //             }
+    //         }
+    //     }
+    // }
     ele.appendChild(tr);
 }
 
 function showPersonalId() {
-    // alert(this.cells[0].innerHTML);
     var surname = (this.cells[1].innerHTML);
     var name = (this.cells[2].innerHTML);
     var table = document.getElementById('creditInfo');
-    // alert(table.rows.length);
     for ( var i = 0; i < table.rows.length; i++ ) {
         if ( CreditDB[i][1] == surname && CreditDB[i][2] == name ) {
-            alert('good');
             var eleList = document.getElementById('personalInfo');
             for (var j = 0; j < CreditDB.length; j++ ){
                 var tr = document.createElement('tr');
