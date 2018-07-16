@@ -75,62 +75,93 @@ function getForm() {
 }
 
 var id = 0;
-var count = 0;
+
 function printTable(surname, name, credit, term) {
     id++;
     CreditDB.push([id,surname,name,credit,term]);
-    var ele = document.getElementById('creditInfo');
-    for (var i = 0; i < CreditDB.length; i++ ){
-        var tr = document.createElement('tr');
-        var tdId = document.createElement('td');
-        var tdName = document.createElement('td');
-        var tdSurname = document.createElement('td');
-        var tdAmount = document.createElement('td');
-        var tdTerm = document.createElement('td');
-        var idShow = document.createTextNode(CreditDB[i][0]);
-        var nameShow = document.createTextNode(CreditDB[i][1]);
-        var surnameShow = document.createTextNode(CreditDB[i][2]);
-        var amoutShow = document.createTextNode(CreditDB[i][3]);
-        var termShow = document.createTextNode(CreditDB[i][4]);
-        tdId.appendChild(idShow);
-        tdName.appendChild(nameShow);
-        tdSurname.appendChild(surnameShow);
-        tdAmount.appendChild(amoutShow);
-        tdTerm.appendChild(termShow);
-        tr.appendChild(tdId);
-        tr.appendChild(tdName);
-        tr.appendChild(tdSurname);
-        tr.appendChild(tdAmount);
-        tr.appendChild(tdTerm);
-        tr.addEventListener("click", showPersonalId);
+
+    audit();
+    var auditArr = [];
+    function audit() {
+        var table = document.getElementById('creditInfo');
+        var count = 0;
+        for ( var j = 0; j < table.rows.length; j++ ) {
+            if ( surname == CreditDB[j][1] ) {
+                count++;
+                console.log (count);
+                if ( count >= 3 ) {
+                    alert('Упс! У Вас вже є 3 кредита! Більше не можна!:(');
+                    // how STOP function printTable(surname, name, credit, term)?;
+                    // console.log(false);
+                    auditArr.push(false);
+                    // return false;
+                } else {
+                    // console.log(true);
+                    auditArr.push(true);
+                    // return true;
+                }
+            } else {
+                // console.log(true);
+                auditArr.push(true);
+                // return true;
+            }
+        }
+    }
+    alert (unique(auditArr));
+    var result = [null];
+    function unique(auditArr) {
+
+
+        nextInput:
+            for (var i = 0; i < auditArr.length; i++) {
+                var str = auditArr[i];
+                for (var j = 0; j < result.length; j++) {
+                    if (result[j] == str) continue nextInput;
+                }
+                result.push(str);
+            }
+
+        return result;
     }
 
-    var table = document.getElementById('creditInfo');
-    for ( var j = 0; j < table.rows.length; j++ ) {
-        if ( surname == CreditDB[j][1] ) {
-            count++;
-            console.log (count);
-            if ( count - 1 == 3 ) {
-                alert('Упс! У Вас вже є 3 кредита! Більше не можна!:(');
-            }
+    for ( var m = 0; m < result.length; m++ ) {
+        if ( result[m] ) {
+            printRow();
+        } else {
+            alert('Упс! У Вас вже є 3 кредита! Більше не можна!:(');
         }
     }
 
 
-    // var table = document.getElementById('creditInfo');
-    // for ( var k = 0; k < table.rows.length; k++ ) {
-    //     for ( var j = 0; j < table.rows.length; j++ ) {
-    //         if ( k != j && CreditDB[k][1] == CreditDB[j][1] && CreditDB[k][2] == CreditDB[j][2] ) {
-    //             count++;
-    //             console.log(count);
-    //             if ( count = 8 ) {
-    //                 alert ('Упс! У Вас вже є 3 кредита! Більше не можна!:(');
-    //                 break;
-    //             }
-    //         }
-    //     }
-    // }
-    ele.appendChild(tr);
+    function printRow() {
+        var ele = document.getElementById('creditInfo');
+        for (var i = 0; i < CreditDB.length; i++ ){
+            var tr = document.createElement('tr');
+            var tdId = document.createElement('td');
+            var tdName = document.createElement('td');
+            var tdSurname = document.createElement('td');
+            var tdAmount = document.createElement('td');
+            var tdTerm = document.createElement('td');
+            var idShow = document.createTextNode(CreditDB[i][0]);
+            var nameShow = document.createTextNode(CreditDB[i][1]);
+            var surnameShow = document.createTextNode(CreditDB[i][2]);
+            var amoutShow = document.createTextNode(CreditDB[i][3]);
+            var termShow = document.createTextNode(CreditDB[i][4]);
+            tdId.appendChild(idShow);
+            tdName.appendChild(nameShow);
+            tdSurname.appendChild(surnameShow);
+            tdAmount.appendChild(amoutShow);
+            tdTerm.appendChild(termShow);
+            tr.appendChild(tdId);
+            tr.appendChild(tdName);
+            tr.appendChild(tdSurname);
+            tr.appendChild(tdAmount);
+            tr.appendChild(tdTerm);
+            tr.addEventListener("click", showPersonalId);
+        }
+        ele.appendChild(tr);
+    }
+
 }
 
 function showPersonalId() {
