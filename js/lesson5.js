@@ -71,11 +71,25 @@ function getForm() {
     var name = document.getElementsByName("name")[0].value;
     var credit = document.getElementsByName("credit")[0].value;
     var term = document.getElementsByName("term")[0].value;
-    printTable(surname, name, credit, term);
+    checkTable(surname, name, CreditDB);
+}
+
+function checkTable(surname, name, CreditDB) {
+    var table = document.getElementById('creditInfo');
+    var count = 0;
+    for ( var i = 0; i < table.rows.length; i++) {
+        if (surname == CreditDB[i][1]) {
+            count++;
+        }
+    }
+    if (count < 3) {
+        printTable(surname, name, credit, term);
+    } else {
+        alert('Упс! Перебільшення ліміту виданих кредитів! Більше не можна!:(');
+    }
 }
 
 var id = 0;
-
 function printTable(surname, name, credit, term) {
     id++;
     CreditDB.push([id,surname,name,credit,term]);
