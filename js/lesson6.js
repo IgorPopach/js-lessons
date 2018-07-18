@@ -35,65 +35,88 @@
 // var Tom = new User("Tom",27);
 //
 // Tom.displayInfo();
-// Tom.setName(687);
+// Tom.setName("Bill");
 // Tom.displayInfo();
 // console.log(Tom.getName());
 
 
 var Dog = function (name, breed, age, energy, weight) {
-    this.name = name;
-    this.breed = breed;
-    this.age = age;
-    this.energy = energy;
-    this.weight = weight;
+    var _name = name;
+    var _breed = breed;
+    var _age = age;
+    var _energy = energy;
+    var _weight = weight;
     this.showDogInfo = function () {
-        document.write(`Name:${this.name} Breed:${this.breed} Age:${this.age} Energy:${this.energy} Weight:${this.weight}<br>`);
+        if (_energy > 0) {
+            document.write(`Name: ${_name} Breed: ${_breed} Age: ${_age} Energy: ${_energy} Weight: ${_weight}<br>`);
+        } else {
+            document.write('Game Over :(' + '<br>');
+        }
+    }
+    this.play = function() {
+        return _energy = _energy - 20;
+    }
+    this.eat = function() {
+        if (_energy > 0) {
+            return _energy = _energy + 20;
+        }
     }
     this.setName = function(name) {
         if (typeof(name) === "string") {
-            this.name = name;
+            _name = name;
         }
     }
     this.getName = function() {
-        return name;
+        return _name;
     };
     this.setBreed = function(breed) {
         if (typeof(breed) === "string") {
-            this.breed = breed;
+            _breed = breed;
         }
     }
     this.getBreed = function() {
-        return breed;
+        return _breed;
     };
     this.setAge = function(age) {
         if (age < 30) {
-            this.age = age;
+            _age = age;
         }
     }
     this.getAge = function() {
-        return age;
+        return _age;
     };
     this.setEnergy = function(energy) {
-        if (energy < 100) {
-            this.energy = energy;
+        if (energy <= 100) {
+            // _energy = energy;
         }
     }
     this.getEnergy = function() {
-        return energy;
+        return _energy;
     };
     this.setWeight = function(weight) {
         if (weight > 1 && weight < 200) {
-            this.weight = weight;
+            _weight = weight;
         }
     }
     this.getWeight = function() {
-        return weight;
-    };
+        return _weight;
+    }
 }
+
+
+
 var Tuzik = new Dog("Tuzik", "hunter", 2, 20, 2);
-var Borik = new Dog("Borik", "buldog", 5, 75, 45);
-var Jack = new Dog("Jack", "shepherd", 10, 60, 40);
+// var Borik = new Dog("Borik", "buldog", 5, 75, 45);
+// var Jack = new Dog("Jack", "shepherd", 10, 60, 40);
 
 Tuzik.showDogInfo();
-Borik.showDogInfo();
-Jack.showDogInfo();
+Tuzik.play();
+Tuzik.showDogInfo();
+Tuzik.eat();
+Tuzik.showDogInfo();
+Tuzik.eat();
+Tuzik.showDogInfo();
+// Borik.showDogInfo();
+// Jack.showDogInfo();
+
+
