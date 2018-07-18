@@ -49,18 +49,28 @@ var Dog = function (name, breed, age, energy, weight) {
     this.showDogInfo = function () {
         if (_energy > 0) {
             document.write(`Name: ${_name} Breed: ${_breed} Age: ${_age} Energy: ${_energy} Weight: ${_weight}<br>`);
-        } else {
-            document.write('Game Over :(' + '<br>');
+        }
+        else {
+           this.dead();
         }
     }
+    this.dead = function (){
+        document.write('Game Over :(' + '<br>');
+    }
     this.play = function() {
-        return _energy = _energy - 20;
+        return _energy -= 20;
     }
     this.eat = function() {
         if (_energy > 0) {
-            return _energy = _energy + 20;
+            return _energy += 20;
         }
     }
+    // this.dead = function () {
+    //     if (_energy <= 0) {
+    //         return document.write('Game Over :(' + '<br>');
+    //     }
+    // }
+    // this.dead();
     this.setName = function(name) {
         if (typeof(name) === "string") {
             _name = name;
@@ -112,10 +122,10 @@ var Tuzik = new Dog("Tuzik", "hunter", 2, 20, 2);
 Tuzik.showDogInfo();
 Tuzik.play();
 Tuzik.showDogInfo();
-Tuzik.eat();
-Tuzik.showDogInfo();
-Tuzik.eat();
-Tuzik.showDogInfo();
+// Tuzik.eat();
+// Tuzik.showDogInfo();
+// Tuzik.eat();
+// Tuzik.showDogInfo();
 // Borik.showDogInfo();
 // Jack.showDogInfo();
 
