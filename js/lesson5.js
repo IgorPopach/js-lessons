@@ -124,7 +124,7 @@ function printRow() {
     ele.appendChild(tr);
 }
 
-//Показує список всіх взятих кредитів
+//Показує список всіх взятих кредитів та очищує список перед новим списком
 function showCreditorInfo() {
     clearCreditorInfo();
     var surname = (this.cells[1].innerHTML);
@@ -171,13 +171,6 @@ function clearCreditorInfo() {
     while (table.hasChildNodes()) {
         table.removeChild(table.firstChild);
     }
-    // var table = document.getElementById('personalInfo');
-    // console.log(table.childNodes.length);
-    // for (var i = 0; i < 3; i++) {
-    //     var table = document.getElementById('personalInfo');
-    //     console.log(table.length);
-    //     table.deleteRow(i);
-    // }
 }
 
 
