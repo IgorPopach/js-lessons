@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Credit</title>
+    <link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Teko:400,700" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+<section id="contact">
+    <div class="section-content">
+        <div class="container-fluid">
+            <div class="col-8">
+                <h1 class="section-header">Get <span class="content-header wow fadeIn " data-wow-delay="0.2s"
+                                                     data-wow-duration="2s"> Money with Best Credit Online</span></h1>
+                <h3>24/7 Support. Free games for best clients!</h3>
+            </div>
+            <div class="ExchangeRates">
+                <p>Exchange Rates:</p>
+                <table>
+                    <thead>
+                    <th></th>
+                    <th>Buy </th>
+                    <th>Sale </th>
+                    </thead>
+                    <tbody id="Rates">
+                    <tr>
+                        <td>USD / UAH</td>
+                        <td class="buy">0</td>
+                        <td class="sale">0</td>
+                    </tr>
+                    <tr>
+                        <td>EUR / UAH</td>
+                        <td class="buy">0</td>
+                        <td class="sale">0</td>
+                    </tr>
+                    <tr>
+                        <td>RUR / UAH</td>
+                        <td class="buy">0</td>
+                        <td class="sale">0</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="contact-section">
+        <div class="container">
+            <div>
+                <div class="col-md-6 form-line">
+                    <div class="form-group">
+                        <label>Client name</label>
+                        <input type="text" class="form-control" name="clientName" placeholder=" Enter Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Client surname</label>
+                        <input type="text" class="form-control" name="clientSurname"
+                               placeholder=" Enter client surname" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Amount</label>
+                        <input type="number" class="form-control" name="amount" placeholder=" Enter amount" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Term</label>
+                        <input type="number" class="form-control" maxlength="2" min="3" max="12" name="term"
+                               placeholder=" Enter term" required>
+                    </div>
+                    <div>
+
+                        <button type="button" class="btn btn-default submit" name="submit"><i class="fa fa-paper-plane"
+                                                                                              aria-hidden="true"></i>
+                            Send
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <table class="table">
+                            <thead>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Surname</th>
+                            <th>Amount</th>
+                            <th>Term</th>
+                            </thead>
+                            <tbody id="creditList">
+
+                            </tbody>
+                        </table>
+
+                        <!--<textarea class="form-control" id="description" placeholder="Enter Your Message"></textarea>-->
+                    </div>
+
+                </div>
+                <div class="row credit-detail">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <h3>Credit Detail</h3>
+                            <table class="table">
+                                <thead>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Surname</th>
+                                <th>Amount</th>
+                                <th>Term</th>
+                                <th>Loan Rate</th>
+                                <th>Total Loan</th>
+                                </thead>
+                                <tbody id="creditInfo">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+<script src="js/common.js"></script>
+</body>
+</html>
