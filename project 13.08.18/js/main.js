@@ -31,7 +31,36 @@ programmer.constructor = function (name, age, gender, subject, specials) {
         document.write(" - Can hard codding with " + this.specials);
     }
 }
-programmer.constructor("Igor", 30, "male", "IT", "Angular");
-programmer.wellcome();
-programmer.skills();
-console.log(Person.isPrototypeOf(programmer));// перевіряє наслідування у батьківського обєкта - true
+// programmer.constructor("Igor", 30, "male", "IT", "Angular");
+// programmer.wellcome();
+// programmer.skills();
+// console.log(Person.isPrototypeOf(programmer));// перевіряє наслідування у батьківського обєкта - true
+
+
+//homework 14.08.18
+var Dog = {
+    constructor: function (name, age) {
+        this.name = name;
+        this.age = age;
+        return this;
+    },
+    wellcome: function() {
+        document.write(`Hello, i am ${this.name}. `);
+    }
+}
+var HunterDog = Object.create(Dog);
+HunterDog.constructor = function (name, age, speed) {
+    Dog.constructor.apply(this, arguments);
+    this.speed = speed;
+}
+var Taxa = Object.create(HunterDog);
+Taxa.constructor = function (name, age, speed, weight) {
+    HunterDog.constructor.apply(this, arguments);
+    this.weight = weight;
+    this.aboutMe = function() {
+        document.write(`My speed is ${this.speed} km/h and I have weight - ${this.weight} kg`);
+    }
+}
+Taxa.constructor("Nika", 12, 30, 25);
+Taxa.wellcome();
+Taxa.aboutMe();
