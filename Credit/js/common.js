@@ -3,6 +3,26 @@ window.addEventListener('load', init(), false);
 function init() {
     var btnSubmit = document.getElementsByName('submit')[0];
     btnSubmit.addEventListener('click', getUserInfo);
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyA7LH_5VxEd477lNc2ReiMnnjTDWGqf_qo",
+        authDomain: "credit-manager-dd2e6.firebaseapp.com",
+        databaseURL: "https://credit-manager-dd2e6.firebaseio.com",
+        projectId: "credit-manager-dd2e6",
+        storageBucket: "",
+        messagingSenderId: "687297724044"
+    };
+    firebase.initializeApp(config); // ініціалізуємо firebase
+
+}
+
+function writeUserData(name, surname, amount, term) {
+    firebase.database().ref(name).set({
+        username: name,
+        surname: surname,
+        amount : amount,
+        term : term
+    });
 }
 
 function getUserInfo() {
@@ -10,7 +30,7 @@ function getUserInfo() {
     var surname = document.getElementsByName('clientSurname')[0].value;
     var amount = document.getElementsByName('amount')[0].value;
     var term = document.getElementsByName('term')[0].value;
-
+    writeUserData(name, surname, amount, term);
     SaveToDB(name, surname, amount, term);
 }
 
@@ -48,7 +68,6 @@ function SaveToDB(name, surname, amount, term) {
         tr.addEventListener('click', getPersonID);
     }
     ele.appendChild(tr);
-
 }
 
 function getPersonID() {
@@ -113,9 +132,14 @@ if (xhr.status != 200) {
     var rate = document.getElementById('Rates');
 
     rate.innerHTML = cash[0].buy;
-    // for (var i = 0; i < cash.length; i++) {
-    //
-    //     document.write(cash[i].ccy + ' / ' + cash[i].base_ccy + ' buy: ' + cash[i].buy + ' sale: ' + cash[i].sale + '<br>');
-    // }
+
 }
+
+
+
+
+
+
+//firebase
+
 

@@ -45,7 +45,7 @@ var Dog = {
         return this;
     },
     wellcome: function() {
-        document.write(`Hello, i am ${this.name}. `);
+        document.write(`Hello, i am ${this.name}. I am ${this.age} years old. `);
     }
 }
 var HunterDog = Object.create(Dog);
