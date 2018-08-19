@@ -16,14 +16,7 @@ function init() {
 
 }
 
-function writeUserData(name, surname, amount, term) {
-    firebase.database().ref(name).set({
-        username: name,
-        surname: surname,
-        amount : amount,
-        term : term
-    });
-}
+
 
 function getUserInfo() {
     var name = document.getElementsByName('clientName')[0].value;
@@ -31,30 +24,37 @@ function getUserInfo() {
     var amount = document.getElementsByName('amount')[0].value;
     var term = document.getElementsByName('term')[0].value;
     writeUserData(name, surname, amount, term);
-    SaveToDB(name, surname, amount, term);
 }
 
-var CreditDB = [];
-var id = 0;
+function writeUserData(name, surname, amount, term) {
+    var newClientKey = firebase.database().ref().child('users').push().key;
+    firebase.database().ref('users/' + newClientKey).set({
+        username: name,
+        surname: surname,
+        amount : amount,
+        term : term
+    });
 
-function SaveToDB(name, surname, amount, term) {
-    id++;
-    CreditDB.push([id, name, surname, amount, term]);
+    // firebase.database().ref('users').once('value', function(snap){
+    //     printUsers(snap.val());
+    // });
 
-    var ele = document.getElementById('creditList');
-
-    for (var i = 0; i < CreditDB.length; i++) {
+    var usersRef = firebase.database().ref("users/");
+    clearCreditorInfo();
+    usersRef.on("child_added", function(data) {
+        var newUser = data.val();
+        var ele = document.getElementById('creditList');
         var tr = document.createElement('tr');
         var tdId = document.createElement('td');
         var tdName = document.createElement('td');
         var tdSurname = document.createElement('td');
         var tdAmount = document.createElement('td');
         var tdTerm = document.createElement('td');
-        var idShow = document.createTextNode(CreditDB[i][0]);
-        var nameShow = document.createTextNode(CreditDB[i][1]);
-        var surnameShow = document.createTextNode(CreditDB[i][2]);
-        var amoutShow = document.createTextNode(CreditDB[i][3]);
-        var termShow = document.createTextNode(CreditDB[i][4]);
+        var idShow = document.createTextNode(data.key);
+        var nameShow = document.createTextNode(newUser.username);
+        var surnameShow = document.createTextNode(newUser.surname);
+        var amoutShow = document.createTextNode(newUser.amount);
+        var termShow = document.createTextNode(newUser.term);
         tdId.appendChild(idShow);
         tdName.appendChild(nameShow);
         tdSurname.appendChild(surnameShow);
@@ -65,10 +65,58 @@ function SaveToDB(name, surname, amount, term) {
         tr.appendChild(tdSurname);
         tr.appendChild(tdAmount);
         tr.appendChild(tdTerm);
+        ele.appendChild(tr);
         tr.addEventListener('click', getPersonID);
-    }
-    ele.appendChild(tr);
+
+        console.log("name: " + newUser.username);
+        console.log("surname: " + newUser.surname);
+        console.log("amount: " + newUser.amount);
+        console.log("term: " + newUser.term);
+    });
 }
+
+function clearCreditorInfo() {
+    var table = document.getElementById('creditList');
+    while (table.hasChildNodes()) {
+        table.removeChild(table.firstChild);
+    }
+}
+// var CreditDB = [];
+// var id = 0;
+
+// function SaveToDB(name, surname, amount, term) {
+//
+//     id++;
+//     CreditDB.push([id, name, surname, amount, term]);
+//     var ele = document.getElementById('creditList');
+//
+//
+//     for (var i = 0; i < CreditDB.length; i++) {
+//         var tr = document.createElement('tr');
+//         var tdId = document.createElement('td');
+//         var tdName = document.createElement('td');
+//         var tdSurname = document.createElement('td');
+//         var tdAmount = document.createElement('td');
+//         var tdTerm = document.createElement('td');
+//         var idShow = document.createTextNode(CreditDB[i][0]);
+//         var nameShow = document.createTextNode(CreditDB[i][1]);
+//         var surnameShow = document.createTextNode(CreditDB[i][2]);
+//         var amoutShow = document.createTextNode(CreditDB[i][3]);
+//         var termShow = document.createTextNode(CreditDB[i][4]);
+//         tdId.appendChild(idShow);
+//         tdName.appendChild(nameShow);
+//         tdSurname.appendChild(surnameShow);
+//         tdAmount.appendChild(amoutShow);
+//         tdTerm.appendChild(termShow);
+//         tr.appendChild(tdId);
+//         tr.appendChild(tdName);
+//         tr.appendChild(tdSurname);
+//         tr.appendChild(tdAmount);
+//         tr.appendChild(tdTerm);
+//         tr.addEventListener('click', getPersonID);
+//     }
+//     ele.appendChild(tr);
+// }
 
 function getPersonID() {
     var currentClientID = this;
@@ -140,6 +188,18 @@ if (xhr.status != 200) {
 
 
 
-//firebase
 
 
+// var database = firebase.database();
+// function writeUserData(userId, firstname, lastname, count, term) {
+//     firebase.database().ref('users/'+userId).set({
+//         userid: userId,
+//         firstname: firstname,
+//         lastname: lastname,
+//         count: count,
+//         term: term
+//     });
+// }
+// firebase.database().ref('users/').once('value', function(snap){
+//     console.log(JSON.stringify(snap.val()))
+// });

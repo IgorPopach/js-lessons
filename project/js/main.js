@@ -18,13 +18,8 @@ xhr.send();
 if (xhr.status != 200) {
     alert (xhr.status + xhr.statusText);
 } else {
-    // document.write(xhr.responseText + '<br>');
     var cash = JSON.parse(xhr.responseText);
     for (var i = 0; i < cash.length; i++) {
-        document.write(cash[i].ccy + ' / ' + cash[i].base_ccy + ' buy: ' + cash[i].buy + ' sale: ' + cash[i].sale + '<br>');
-        // for (var key in cash[i]) {
-        //     document.write(key + cash[i][key] + '<br>');
-        // }
+        document.write(cash[i].ccy + ' / ' + cash[i].base_ccy + ' buy: ' + cash[i].buy + ' sale: ' + cash[i].sale + '<br>')
     }
-
 }
