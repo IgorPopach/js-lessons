@@ -1,0 +1,18 @@
+#first {
+    padding: 50px;
+    border: 2px solid black;
+    background-color: #fff;
+}
+#first p {
+
+}
+#second {
+    padding: 50px;
+    border: 2px solid black;
+    background-color: #fff;
+}
+#third {
+    height: 500px;
+    border: 2px solid black;
+    background-color: #fff;
+}
