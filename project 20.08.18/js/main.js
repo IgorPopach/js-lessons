@@ -7,7 +7,7 @@ window.onload = function() {
         function(event){
         console.log(event);
         this.style.backgroundColor = "green";
-        event.stopPropagation();//зупиняє
+        event.stopPropagation();//зупиняє передачу події
         console.log("handler1");
         },
         flag);

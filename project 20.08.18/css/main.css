@@ -1,18 +1,12 @@
-#first {
-    padding: 50px;
-    border: 2px solid black;
-    background-color: #fff;
+h2 {
+    text-align: center;
 }
-#first p {
-
+.ip {
+    padding: 10px;
 }
-#second {
-    padding: 50px;
-    border: 2px solid black;
-    background-color: #fff;
+span {
+    margin: 0 5px;
 }
-#third {
-    height: 500px;
-    border: 2px solid black;
-    background-color: #fff;
+input {
+    text-align: center;
 }
