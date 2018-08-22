@@ -73,3 +73,16 @@ tr td{
     top: 20px;
     right: 50px;
 }
+
+/*Login page*/
+
+.login-section input {
+    margin-bottom: 10px;
+    color: black;
+}
+
+.btn-login {
+    padding: 10px 20px;
+    background-color: transparent;
+    color: white;
+}

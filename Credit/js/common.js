@@ -1,6 +1,21 @@
 window.addEventListener('load', init(), false);
 
 function init() {
+    var login = document.getElementById('login');
+    login.addEventListener('click', function read() {
+        // window.localStorage.setItem('name', 'admin');
+        // window.localStorage.setItem('password', 'admin');
+        var loginName = document.getElementsByName('login')[0].value;
+        var loginPassword = document.getElementsByName('password')[0].value;
+        var name = window.localStorage.getItem('name');
+        var password = window.localStorage.getItem('password');
+        if ( loginName == name && loginPassword == password ) {
+            document.location.href = "index.html";
+        }
+        console.log(name, surname);
+    }, false);
+
+
     var btnSubmit = document.getElementsByName('submit')[0];
     btnSubmit.addEventListener('click', getUserInfo);
     // Initialize Firebase
@@ -183,23 +198,3 @@ if (xhr.status != 200) {
 
 }
 
-
-
-
-
-
-
-
-// var database = firebase.database();
-// function writeUserData(userId, firstname, lastname, count, term) {
-//     firebase.database().ref('users/'+userId).set({
-//         userid: userId,
-//         firstname: firstname,
-//         lastname: lastname,
-//         count: count,
-//         term: term
-//     });
-// }
-// firebase.database().ref('users/').once('value', function(snap){
-//     console.log(JSON.stringify(snap.val()))
-// });

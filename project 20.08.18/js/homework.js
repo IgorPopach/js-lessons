@@ -3,7 +3,6 @@ var getChar = function getChar(event) {
     var x = event.charCode || event.keyCode;
     if (x != 48 && x != 49) {
         event.preventDefault();
-    } else {
     }
 }
 
