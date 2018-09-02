@@ -1,36 +1,50 @@
 window.addEventListener('load', init(), false);
 
 function init() {
-    var login = document.getElementById('login');
-    login.addEventListener('click', function read() {
-        // window.localStorage.setItem('name', 'admin');
-        // window.localStorage.setItem('password', 'admin');
-        var loginName = document.getElementsByName('login')[0].value;
-        var loginPassword = document.getElementsByName('password')[0].value;
-        var name = window.localStorage.getItem('name');
-        var password = window.localStorage.getItem('password');
-        if ( loginName == name && loginPassword == password ) {
-            document.location.href = "index.html";
-        }
-        console.log(name, surname);
-    }, false);
-
-
-    var btnSubmit = document.getElementsByName('submit')[0];
-    btnSubmit.addEventListener('click', getUserInfo);
-    // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyA7LH_5VxEd477lNc2ReiMnnjTDWGqf_qo",
-        authDomain: "credit-manager-dd2e6.firebaseapp.com",
-        databaseURL: "https://credit-manager-dd2e6.firebaseio.com",
-        projectId: "credit-manager-dd2e6",
-        storageBucket: "",
-        messagingSenderId: "687297724044"
-    };
-    firebase.initializeApp(config); // ініціалізуємо firebase
-
+    var fullPath = window.location.pathname;
+    if (Router(fullPath) == 'index.html') {
+        var login = document.getElementById('login');
+        login.addEventListener('click', function read() {
+            // window.localStorage.setItem('name', 'admin');
+            // window.localStorage.setItem('password', 'admin');
+            var loginName = document.getElementsByName('login')[0].value;
+            var loginPassword = document.getElementsByName('password')[0].value;
+            var name = window.localStorage.getItem('name');
+            var password = window.localStorage.getItem('password');
+            if ( loginName == name && loginPassword == password ) {
+                document.location.href = "credit.html";
+            } else {
+                document.getElementsByName('login')[0].value = '';
+                document.getElementsByName('password')[0].value = '';
+                document.getElementById('showFalse').innerHTML = "Your login or password is incorrect. Please try" +
+                    " again";
+            }
+        }, false);
+    } else if (Router(fullPath) == 'credit.html') {
+        privatBank();
+        var btnSubmit = document.getElementsByName('submit')[0];
+        btnSubmit.addEventListener('click', getUserInfo);
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyA7LH_5VxEd477lNc2ReiMnnjTDWGqf_qo",
+            authDomain: "credit-manager-dd2e6.firebaseapp.com",
+            databaseURL: "https://credit-manager-dd2e6.firebaseio.com",
+            projectId: "credit-manager-dd2e6",
+            storageBucket: "",
+            messagingSenderId: "687297724044"
+        };
+        firebase.initializeApp(config); // ініціалізуємо firebase
+    } else {
+        document.location.href = 'https://hakim.se/404';
+    }
 }
 
+function Router(fullPath){
+    var path = fullPath.split("/");
+    var lenght = path.length;
+    var route = path[lenght -1];
+    return route;
+}
 
 
 function getUserInfo() {
@@ -183,18 +197,29 @@ function showCreditDetail(id) {
     ele.appendChild(tr);
 }
 
+function privatBank() {
+    var xhr = new XMLHttpRequest();
+    var url = "https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5";
+    xhr.open('GET', url, false);
+    xhr.send();
+    if (xhr.status != 200) {
+        alert(xhr.status + xhr.statusText);
+    } else {
+        var cash = JSON.parse(xhr.responseText);
+        var buy1 = document.getElementById('buy1');
+        var sale1 = document.getElementById('sale1');
+        var buy2 = document.getElementById('buy2');
+        var sale2 = document.getElementById('sale2');
+        var buy3 = document.getElementById('buy3');
+        var sale3 = document.getElementById('sale3');
 
-var xhr = new XMLHttpRequest();
-var url = "https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5";
-xhr.open('GET', url, false);
-xhr.send();
-if (xhr.status != 200) {
-    alert(xhr.status + xhr.statusText);
-} else {
-    var cash = JSON.parse(xhr.responseText);
-    var rate = document.getElementById('Rates');
-
-    rate.innerHTML = cash[0].buy;
-
+        buy1.innerHTML = Math.round(cash[0].buy * 100) / 100;
+        sale1.innerHTML = Math.round(cash[0].sale * 100) / 100;
+        buy2.innerHTML = Math.round(cash[1].buy * 100) / 100;
+        sale2.innerHTML = Math.round(cash[1].sale * 100) / 100;
+        buy3.innerHTML = Math.round(cash[2].buy * 1000) / 1000;
+        sale3.innerHTML = Math.round(cash[2].sale * 100) / 100;
+    }
 }
+
 
