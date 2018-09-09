@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>Input information about animal</h2>
+            </div>
+            <div class="col-12 col-md-6">
+                <h4>
+                    Dog
+                </h4>
+                <div class="row">
+                    <div class="col-3">
+                        <p>name</p>
+                        <p>age</p>
+                        <p>breed</p>
+                        <p>gender</p>
+                        <p>can bite</p>
+                    </div>
+                    <div class="col-9">
+                        <input type="text" class = "nameDog">
+                        <input type="text" class = "ageDog">
+                        <input type="text" class = "breedDog">
+                        <input type="text" class = "genderDog">
+                        <input type="radio" id="r1" name="one" class = "biteDog" value="yes" checked="checked">yes
+                        <input type="radio" id="r2" name="one" class = "biteDog" value="no">no
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 align-center">
+                        <input type="button" id="writeDog" value = "Write">  
+                    </div>
+                    <div class="col-6 align-center">
+                        <input type="button" id="removeDog" value = "Clear info">
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                    <h4>
+                            Cat
+                        </h4>
+                        <div class="row">
+                            <div class="col-3">
+                                <p>name</p>
+                                <p>age</p>
+                                <p>breed</p>
+                                <p>gender</p>
+                                <p>can scratch</p>
+                            </div>
+                            <div class="col-9">
+                                <input type="text" class = "nameCat">
+                                <input type="text" class = "ageCat">
+                                <input type="text" class = "breedCat">
+                                <input type="text" class = "genderCat">
+                                <input type="radio" id="r3" name="two" class = "scratchCat" value="yes" checked="checked">yes
+                                <input type="radio" id="r4" name="two" class = "scratchCat" value="no">no
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 align-center">
+                                <input type="button" id="writeCat" value = "Write">  
+                            </div>
+                            <div class="col-6 align-center">
+                                <input type="button" id="removeCat" value = "Clear Info">
+                            </div>
+                        </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 align-center">
+                    <input type="button" id="showDog" value = "Show Info about Dog">
+                    <input type="button" id="showCat" value = "Show Info about Dog">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <p id="dogInfo"></p>
+            </div>
+            <div class="col-6">
+                    <p id="catInfo"></p>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+<script src="js/homework.js"></script>
+
+
+</body>
+</html>
