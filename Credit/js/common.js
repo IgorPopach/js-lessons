@@ -14,8 +14,8 @@ function init() {
     if (Router(fullPath) == 'index.html') {
         var login = document.getElementById('login');
         login.addEventListener('click', function read() {
-            // window.localStorage.setItem('name', 'admin');
-            // window.localStorage.setItem('password', 'admin');
+            window.localStorage.setItem('name', 'admin');
+            window.localStorage.setItem('password', 'admin');
             var loginName = document.getElementsByName('login')[0].value;
             var loginPassword = document.getElementsByName('password')[0].value;
             var name = window.localStorage.getItem('name');
