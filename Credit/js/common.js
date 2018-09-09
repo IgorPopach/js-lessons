@@ -1,5 +1,14 @@
 window.addEventListener('load', init(), false);
 
+
+
+const Router = (fullPath) => {
+    let path = fullPath.split("/");
+    let lenght = path.length;
+    let route = path[lenght -1];
+    return route;
+};
+
 function init() {
     var fullPath = window.location.pathname;
     if (Router(fullPath) == 'index.html') {
@@ -39,12 +48,13 @@ function init() {
     }
 }
 
-function Router(fullPath){
-    var path = fullPath.split("/");
-    var lenght = path.length;
-    var route = path[lenght -1];
-    return route;
-}
+
+// function Router(fullPath){
+//     var path = fullPath.split("/");
+//     var lenght = path.length;
+//     var route = path[lenght -1];
+//     return route;
+// }
 
 
 function getUserInfo() {
