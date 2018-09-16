@@ -1,14 +1,11 @@
 window.addEventListener('load', init(), false);
 
 function init() {
-    console.log("init");
-
     let fullPath = window.location.pathname;
     Router(fullPath);
 }
 
 function Router(fullPath) {
-    console.log("Router");
     let path = fullPath.split("/");
     let lenght = path.length;
     let route = path[lenght - 1];
@@ -47,8 +44,6 @@ function Auth() {
         error.innerHTML = "Your login or password is incorrect. Please try" +
         " again";
     }
-
-
 }
 
 function RenderIndex() {
@@ -69,20 +64,21 @@ function Render404() {
 }
 
 function RenderCreditInfo() {
-    privatBank();
+    privatBank("https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5")
+    .then(currencies => addCash(currencies))
+    .catch(
+        err => console.log(err)
+    );
+    FirebaseInit()
+    ShowCreditInfoList();
+    let welcome = document.querySelector(".welcome");
+    let name = window.localStorage.getItem('userName');
+    welcome.innerHTML = `Welcome  -  ${name}!`;
+    let btnlogout = document.getElementsByName('logout')[0];
+    btnlogout.addEventListener('click', logout);
     let btnSubmit = document.getElementsByName('submit')[0];
     btnSubmit.addEventListener('click', getUserInfo);
-    // Initialize Firebase
-    let config = {
-        apiKey: "AIzaSyA7LH_5VxEd477lNc2ReiMnnjTDWGqf_qo",
-        authDomain: "credit-manager-dd2e6.firebaseapp.com",
-        databaseURL: "https://credit-manager-dd2e6.firebaseio.com",
-        projectId: "credit-manager-dd2e6",
-        storageBucket: "",
-        messagingSenderId: "687297724044"
-    };
-    firebase.initializeApp(config); // ініціалізуємо firebase
-    ShowCreditInfoList();
+
 }
 
 
@@ -91,17 +87,17 @@ function ShowCreditInfoList() {
     clearCreditInfoList();
     let usersRef = firebase.database().ref("users/");
     usersRef.on("child_added", function(data) {
-        let newUser = data.val();
+        let userBase = data.val();
         let ele = document.getElementById('creditList');
         let tr = document.createElement('tr');
         let tdName = document.createElement('td');
         let tdSurname = document.createElement('td');
         let tdAmount = document.createElement('td');
         let tdTerm = document.createElement('td');
-        let nameShow = document.createTextNode(newUser.username);
-        let surnameShow = document.createTextNode(newUser.surname);
-        let amoutShow = document.createTextNode(newUser.amount);
-        let termShow = document.createTextNode(newUser.term);
+        let nameShow = document.createTextNode(userBase.username);
+        let surnameShow = document.createTextNode(userBase.surname);
+        let amoutShow = document.createTextNode(userBase.amount);
+        let termShow = document.createTextNode(userBase.term);
         tdName.appendChild(nameShow);
         tdSurname.appendChild(surnameShow);
         tdAmount.appendChild(amoutShow);
@@ -115,12 +111,28 @@ function ShowCreditInfoList() {
     });
 }
 
+function logout() {
+    localStorage.clear();
+    window.location.href = "index.html";
+}
 function getUserInfo() {
     let name = document.getElementsByName('clientName')[0].value;
     let surname = document.getElementsByName('clientSurname')[0].value;
     let amount = document.getElementsByName('amount')[0].value;
     let term = document.getElementsByName('term')[0].value;
-    writeUserData(name, surname, amount, term);
+    let count = 0;
+    let usersRef = firebase.database().ref("users/");
+    usersRef.on("child_added", function(data) {
+        let userBase = data.val();
+        if ( userBase.username == name && userBase.surname == surname) {
+            count++;
+        }
+    });
+    if (count <= 2) {
+        writeUserData(name, surname, amount, term);
+    } else {
+        alert(`Alert! ${name} ${surname} has 3 Credits!!!`)
+    }
 }
 
 function writeUserData(name, surname, amount, term) {
@@ -153,9 +165,9 @@ function getPerson() {
     let surnameList = (this.cells[1].innerHTML);
     let usersRef = firebase.database().ref("users/");
     usersRef.on("child_added", function(data) {
-        let newUser = data.val();
-        if (nameList === newUser.username && surnameList === newUser.surname) {
-        let amount = +newUser.amount;
+        let userBase = data.val();
+        if (nameList === userBase.username && surnameList === userBase.surname) {
+        let amount = +userBase.amount;
         let loan_rate = 3;
         let percent = amount * loan_rate / 100;
         let totalLoan = 0;
@@ -170,10 +182,10 @@ function getPerson() {
         let tdLoan = document.createElement('td');
         let tdTotallLoan = document.createElement('td');
         let idShow = document.createTextNode(data.key);
-        let nameShow = document.createTextNode(newUser.username);
-        let surnameShow = document.createTextNode(newUser.surname);
-        let amoutShow = document.createTextNode(newUser.amount);
-        let termShow = document.createTextNode(newUser.term);
+        let nameShow = document.createTextNode(userBase.username);
+        let surnameShow = document.createTextNode(userBase.surname);
+        let amoutShow = document.createTextNode(userBase.amount);
+        let termShow = document.createTextNode(userBase.term);
         let loanShow = document.createTextNode(loan_rate + " %");
         let totallLoanShow = document.createTextNode(totalLoan);
         tdId.appendChild(idShow);
@@ -195,29 +207,47 @@ function getPerson() {
     });
 }
 
-function privatBank() {
-    let xhr = new XMLHttpRequest();
-    let url = "https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5";
-    xhr.open('GET', url, false);
-    xhr.send();
-    if (xhr.status != 200) {
-        alert(xhr.status + xhr.statusText);
-    } else {
-        let cash = JSON.parse(xhr.responseText);
-        let buy1 = document.getElementById('buy1');
-        let sale1 = document.getElementById('sale1');
-        let buy2 = document.getElementById('buy2');
-        let sale2 = document.getElementById('sale2');
-        let buy3 = document.getElementById('buy3');
-        let sale3 = document.getElementById('sale3');
-
-        buy1.innerHTML = Math.round(cash[0].buy * 100) / 100;
-        sale1.innerHTML = Math.round(cash[0].sale * 100) / 100;
-        buy2.innerHTML = Math.round(cash[1].buy * 100) / 100;
-        sale2.innerHTML = Math.round(cash[1].sale * 100) / 100;
-        buy3.innerHTML = Math.round(cash[2].buy * 1000) / 1000;
-        sale3.innerHTML = Math.round(cash[2].sale * 100) / 100;
-    }
+function privatBank(url) {
+    return new Promise(function(resolve,reject) {
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', url, false);
+        xhr.onload = function(){
+            if (xhr.status == 200) {
+                let currencies = JSON.parse(xhr.responseText);
+                resolve(currencies);
+            } else {
+                reject(xhr.statusText);
+            }
+        };
+        xhr.send();
+    });
 }
 
+function addCash(currencies) {
+    let buy1 = document.getElementById('buy1');
+    let sale1 = document.getElementById('sale1');
+    let buy2 = document.getElementById('buy2');
+    let sale2 = document.getElementById('sale2');
+    let buy3 = document.getElementById('buy3');
+    let sale3 = document.getElementById('sale3');
 
+    buy1.innerHTML = Math.round(currencies[0].buy * 100) / 100;
+    sale1.innerHTML = Math.round(currencies[0].sale * 100) / 100;
+    buy2.innerHTML = Math.round(currencies[1].buy * 100) / 100;
+    sale2.innerHTML = Math.round(currencies[1].sale * 100) / 100;
+    buy3.innerHTML = Math.round(currencies[2].buy * 1000) / 1000;
+    sale3.innerHTML = Math.round(currencies[2].sale * 100) / 100;
+}
+
+function FirebaseInit(){
+// Initialize Firebase
+let config = {
+    apiKey: "AIzaSyA7LH_5VxEd477lNc2ReiMnnjTDWGqf_qo",
+    authDomain: "credit-manager-dd2e6.firebaseapp.com",
+    databaseURL: "https://credit-manager-dd2e6.firebaseio.com",
+    projectId: "credit-manager-dd2e6",
+    storageBucket: "",
+    messagingSenderId: "687297724044"
+};
+firebase.initializeApp(config); // ініціалізуємо firebase
+}
