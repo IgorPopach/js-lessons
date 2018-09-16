@@ -1,8 +1,17 @@
 window.onload = function(){
+    getData(`http://www.omdbapi.com/?s=predator&apikey=e3232cc1`)
+    .then(
+        movies => movies.forEach(movie => addMovie(movie))
+    )
+    .catch(
+        err => console.log(err)
+    );
+
     let go = document.getElementById('go');
     go.addEventListener('click', function search(){
+    movieList.innerHTML='';    
     let search = document.getElementsByName('search')[0].value;
-    getData(`https://www.omdbapi.com/?s=${search}&apikey=e3232cc1`)
+    getData(`http://www.omdbapi.com/?s=${search}&apikey=e3232cc1`)
 .then(
     movies => movies.forEach(movie => addMovie(movie))
 )
@@ -36,7 +45,6 @@ function getData(url) {
 
 function addMovie(movie) {
     console.log(movie);
-    // movieList.innerHTML='';
     let img = document.createElement('img');
     if (movie.Poster != "N/A"){
         img.src = movie.Poster;
