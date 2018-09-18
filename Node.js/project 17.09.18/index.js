@@ -33,8 +33,8 @@ stdin.on("data", input => {
 })
 // console.log(process);
 
-const fs = require('fs'); //вбудований модуль
-const dir = fs.readdirSync(__dirname);
+// const fs = require('fs'); //вбудований модуль
+// const dir = fs.readdirSync(__dirname);
 // console.log(dir);
 // fs.readFile("person.json", (err, dir) => {
 //     if (err) throw (err);
@@ -48,8 +48,9 @@ const dir = fs.readdirSync(__dirname);
 //     if (err) throw (err);
 //     console.log("Append Done");
 // })
-fs.watch(__dirname,(event, filename) => {
-    console.log(event);
-    console.log(filename);
-})
+
+// fs.watch(__dirname,(event, filename) => { //слідкує за змінами в директорії
+//     console.log(event);
+//     console.log(filename);
+// })
 
