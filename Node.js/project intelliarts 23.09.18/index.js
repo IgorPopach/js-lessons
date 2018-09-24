@@ -23,10 +23,19 @@ switch(command) {
 
 function list(){
     fs.readFile("expenses.json", (err,list) => {
+        let i = 0;
+        let currentDate;
         if(err) return console.log(err.message);
         const taskList = JSON.parse(list);
         taskList.forEach(task => {
-        console.log(`  ${task.date}\n  ${task.product} ${task.amount} ${task.currency}\n`)
+            let dateQ = task.date;
+            console.log(task.date);
+            if(dateQ == task.date) {
+                i += 1;
+                console.log(i );
+                console.log("True");
+            }
+        // console.log(`  ${task.date}\n  ${task.product} ${task.amount} ${task.currency}\n`)
         });
     })
 }
