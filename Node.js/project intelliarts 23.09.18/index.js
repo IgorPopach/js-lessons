@@ -6,7 +6,7 @@ const product = process.argv[6];
 const fs = require('fs');
 
 switch(command) {
-    case '--test': test(); break;
+    case '--test': test(date, amount, currency, product); break;
     case '--list': list(); break;
     case '-l': list(); break;
     case '--add': add(date, amount, currency, product); break;
@@ -23,39 +23,54 @@ switch(command) {
 
 function list(){
     fs.readFile("expenses.json", (err,list) => {
-        let i = 0;
-        let currentDate;
         if(err) return console.log(err.message);
         const taskList = JSON.parse(list);
-        taskList.forEach(task => {
-            let dateQ = task.date;
-            console.log(task.date);
-            if(dateQ == task.date) {
-                i += 1;
-                console.log(i );
-                console.log("True");
+        for (let i = 0; i < taskList.length; i++) {
+            console.log(taskList[i].date);
+            let count = 0;
+            for (let j = 0; j < taskList.length; j++) {
+                if (taskList[i].date == taskList[j].date) {
+                    count += 1;
+                    
+                }
             }
+            console.log(count)
+            // if(true) {
+            // console.log(taskList.date);
+            // }
+        }
         // console.log(`  ${task.date}\n  ${task.product} ${task.amount} ${task.currency}\n`)
-        });
-    })
+    });
 }
 
-function test(date) {
-    // fs.readFile("expenses.json", (err, list) => {
-    //     if (err) return console.log(err.message);
-    //     // let taskList = JSON.parse(list);
+function test(date, amount, currency, product) {
+    // let obj = new Object;
+    // let key = date
+    // obj[key] = [];
+    // obj[key].push({amount, currency, product});
+    // console.log(obj);
+    // console.log(obj[date]);
+    fs.readFile("expenses.json", (err, list) => {
+        if (err) return console.log(err.message);
+        let taskList = JSON.parse(list);
+        if (true) {
+            let obj = {};
+            let key = date;
+            obj[key] = [];
+            obj[key].push({amount, currency, product});
+            taskList.push(obj);
+            console.log(taskList[7]);
+            console.log(taskList[7][date]);
+            // taskList.sort(sortDate = (a,b) => Date.parse(b.date) - Date.parse(a.date));
+        }
         
-    //     // taskList.push({obj});
-    //     // obj.amount = amount;
-    //     // obj.currency = currency;
-    //     // obj.product = product;
-    //     // // let saveTask = JSON.stringify(taskList);
-    //     // console.log(taskList);
-    //     // fs.writeFile('expenses.json', saveTask, err => {
-    //     //     if(err) return console.log(err.message);
-    //     //     console.log("task created");
-    //     // })
-    // })
+        // let saveTask = JSON.stringify(taskList);
+        // console.log(taskList);
+        // fs.writeFile('expenses.json', saveTask, err => {
+        //     if(err) return console.log(err.message);
+        //     console.log("task created");
+        // })
+    })
 }
 
 function add(date, amount, currency, product) {
