@@ -11,7 +11,7 @@ server.on('request',(req, res) => {
     res.end(`
     <h1>Hello node.js server</h1>
     <div>
-        <p>Welcome!</p>
+        <p>${req.connection.remoteAddress}!</p>
     </div>
     `)
 })

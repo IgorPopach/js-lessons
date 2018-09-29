@@ -1,7 +1,10 @@
 const http = require('http');
 const home = require('./routes/home');
 const content = require('./routes/content');
+const about = require('./routes/about');
+
 http.createServer((req,res)=>{
+    console.log('user want to see ', req.url);
     if (req.url.match(/\.(html|css|js|png|eot|svg|ttf|woff|woff2)$/)){
         content(req,res);
     }
@@ -12,6 +15,9 @@ http.createServer((req,res)=>{
     }
     else if(req.url==='/'){
         home(req,res);
+    }
+    else if(req.url==='/about'){
+        about(req,res);
     }
     
 console.log(req.url);
