@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 function content(request, response) {
     const ex = path.extname(request.url);
-    console.log(ex);
+    console.log("content working");
     let contentType = '';
     switch (ex) {
         case '.css':
@@ -16,6 +16,9 @@ function content(request, response) {
             break;
         case '.eot':
             contentType = 'application/vnd.ms-fontobject';
+            break;
+        case '.ico':
+            contentType = 'image/x-icon';
             break;
         case '.svg':
             contentType = 'image/svg+xml';
