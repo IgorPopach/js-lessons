@@ -1,0 +1,653 @@
+extends header-main
+block main
+    body
+        header
+        .container-fluid
+            .d-none.d-sm-block.row
+            .col-xs-12
+                .header-top
+                .block-left
+                .block-right
+            .row.header-middle
+            .col-8.col-md-4.d-lg-none.align-self-center.logo-header-small
+            .d-none.d-lg-block.col-lg-4.col-xl-3.align-self-end.logo-header
+            .col-xl-3.align-self-center.d-none.d-xl-block
+                h1
+                span EXCLUSIVE
+                | DISSERTATION WRITING SERVICE
+            .d-none.d-md-block.col-md-6.col-lg-3.col-xl-3.align-self-start.align-center
+                .btn
+                a(href='#')
+                    i.far.fa-comments
+                    .circle
+                    .live-chat
+                    span LIVE CHAT
+                    br
+                    | click here
+            .d-none.d-lg-block.col-lg-3.col-xl-3.align-self-start.align-center
+                .btn
+                a(href='#')
+                    i.fas.fa-phone-square
+                    .toll-free
+                    span Toll FREE
+                    br
+                    | 1(888)901-7803
+                    br
+                    | 1(646)963-6691
+            .col-4.col-md-2.col-lg-2.d-xl-none.align-self-center.align-right
+                .dropdown
+                button.hamburger.hamburger--spin
+                    span.hamburger-box
+                    span.hamburger-inner.dropbtn
+                #myDropdown.dropdown-content
+                    a(href='./home') Home
+                    a(href='./err404') About Us
+                    a(href='./err404') Why Us
+                    a(href='./err404') Guarantees
+                    a(href='./FAQ') FAQ
+                    a(href='./beware') Beware
+                    a(href='./order') Order now
+                    a(href='./err404') Prices
+                    a(href='./err404') Testimonials
+                    a(href='./err404') How it works
+                    a(href='./err404') Discounts
+                    a(href='./contacts') Contact Us
+                    a(href='./blog') Blog
+            .row.grafic-border
+            .row.header-bottom.align-items-center
+            .col-6.d-md-none.align-self-center.align-center
+                .btn-mobile
+                a(href='#')
+                    | LIVE CHAT
+            .col-6.d-md-none.toll-free-mobile.align-self-center.align-center
+                a(href='tel:+1(888)901-7803') 1(888)901-7803
+                br
+                a(href='tel:+1(646)963-6691') 1(646)963-6691
+            .col-xl-12.header-menu.d-none.d-xl-block
+                nav
+                ul
+                    li
+                    a(href='./home') Home
+                    li
+                    a(href='./err404') About Us
+                    li
+                    a(href='./err404') Why Us
+                    li
+                    a(href='./err404') Guarantees
+                    li
+                    a(href='./FAQ') FAQ
+                    li
+                    a(href='./beware') Beware
+                    li
+                    a(href='./order') Order now
+                    li
+                    a(href='./err404') Prices
+                    li
+                    a(href='./err404') Testimonials
+                    li
+                    a(href='./err404') How it works
+                    li
+                    a(href='./err404') Discounts
+                    li
+                    a(href='./contacts') Contact Us
+                    li
+                    a(href='./blog') Blog
+            .d-none.d-lg-block.col-lg-10.col-xl-8.offset-xl-2
+                form.user-login-form(action='login.html', method='post', name='form1')
+                .row.align-items-center
+                    input(type='hidden', name='action', value='authorization')
+                    .col-md-2.align-right.no-padding
+                    label Registration
+                    .col-md-3.no-padding
+                    input(type='text', name='e-mail', placeholder='Email')
+                    .col-md-3
+                    input(type='password', name='pass', value='FakePSW')
+                    .col-md-2
+                    input(type='submit', value='Login')
+                    .col-md-2.no-padding
+                    a(href='#') Forgot your password?
+            .d-none.d-lg-block.col-lg-2.col-xl-2
+                .order-now
+                a(href='#') ORDER NOW
+        .container-fluid
+        .row
+            .d-none.d-xl-block.col-xl-2.left-sidebar
+            .row
+                .col-md-12.margin-bottom
+                .menu-menu
+                    header Menu
+                    nav.rectangle-1
+                    .rectangle-2
+                        ul
+                        li
+                            a(href='#') Home
+                        li
+                            a(href='#') About us
+                        li
+                            a(href='#') Why us
+                        li
+                            a(href='#') Guarantees
+                        li
+                            a(href='#') FAQ
+                        li
+                            a(href='#') Beware
+                        li
+                            a(href='#') Order now
+                        li
+                            a(href='#') Prices
+                        li
+                            a(href='#') Testimonials
+                        li
+                            a(href='#') How it works
+                        li
+                            a(href='#') Contact us
+                .col-md-12.margin-bottom
+                .menu-dissertation
+                    header Dissertation
+                    nav.rectangle-1
+                    .rectangle-2
+                        img(src='../img/binder.png', alt='binder')
+                        ul
+                        li
+                            a(href='#') Dissertation
+                        li
+                            a(href='#') Thesis
+                        li
+                            a(href='#') Thesis proposal
+                        li
+                            a(href='#') Editing
+                        li
+                            a(href='#') Proofreading
+                        li
+                            a(href='#') Formatting
+                .col-md-12.margin-bottom
+                .menu-features
+                    header Features
+                    .rectangle-1
+                    .rectangle-2
+                        ul
+                        li The largest source data base
+                        li Up-to-date sources
+                        li Our writers have access to most university libraries
+                        li Direct communication with a writer
+                        li
+                            span Customer support 24/7
+                        li A wide range of services
+                        li Only certified writers
+                        li Only custom-written papers
+                        li 100% privacy guaranteed
+                        li
+                            span Free
+                            |  plagiarism report
+                        li
+                            span Free amendments
+                        li
+                            span Free outline
+                        li
+                            span Free amendments
+                        li
+                            span Free title page
+                        li
+                            span Free title page
+                            |  bibliography
+                        li
+                            span Free title page
+                            |  formatting
+                        .btn
+                        a(href='#') Read more »
+                .col-md-12.margin-bottom
+                .customer-support
+                    header Customer support
+                    .bg-image
+                    .rectangle-1
+                        .rectangle-2
+                        .got-any
+                            p Got any doubts?
+                            p
+                            span Contact our
+                        p
+                            | Customer Center
+                            br
+                            |                                         if you have any
+                            br
+                            |                                         questions
+                        .btn
+                            a(href='#') Inquiry request
+                        .contact-phone
+                            | Toll free:
+                            a(href='tel:+1(888)901-7803') 1(888)901-7803
+                    .live-chat
+                    a(href='#')
+                .col-md-12.margin-bottom
+                .best-price
+                    p BEST PRICE
+                .col-md-12.margin-bottom.align-center
+                .authenticity
+                    p
+                    | 100%
+                    span Authenticity
+            .col-12.col-lg-9.col-xl-8.main-content
+            .container-fluid
+                section.home
+                .row
+                    .col-md-12
+                    h1 Home
+                .row
+                    .col-md-3
+                    img.img-width(src='../img/home/foto-1.png', alt='foto-1')
+                    .col-md-9
+                    p
+                        | The years each of us spends in the academic world are filled with conflicting emotions.
+                        | First and foremost is the anticipation of entering the ‘real world’ of job market, but
+                        | this excitement is often overshadowed by the constant stress of study overload and
+                        | growing academic demands. The more years you spend in the academic world, the greater
+                        | these demands become. Studying for tests and examinations, along with the inevitable
+                        | written assignments and research projects, all of which must be explored, compiled and
+                        | handed-in in the shortest possible time frame. It can sometimes lead to emotional and
+                        | physical overload and burnout. This pressure is even more intense when a student is
+                        | forced to juggle their time between study and personal life, participating in sports
+                        | programs and holding down a job. Some students are able to magically handle all of these
+                        | demands without apparent difficulty while others can feel overwhelmed by the constant
+                        | stress of too much work and too little time to go around.
+                .row
+                    .col-md.align-center
+                    .price-calculator
+                        header
+                        | Get a price quote
+                        .price-calculator-border
+                        .price-calculator-table
+                            .row.justify-content-around
+                            .col-md-3
+                                label Type of assignment
+                                br
+                                select(name='Type_of_assignment')
+                                option(value='Essay') Essay
+                                option(value='Nunc') Nunc
+                                option(value='consequat') consequat 
+                                option(value='ipsum') ipsum
+                                option(value='sit') sit
+                            .col-md-3
+                                label Spacing
+                                br
+                                select(name='Spacing')
+                                option(value='Double_spaced') Double spaced
+                                option(value='Nunc') Nunc
+                                option(value='consequat') consequat
+                                option(value='ipsum') ipsum
+                                option(value='sit') sit
+                            .col-md-3
+                                label Urgency
+                                br
+                                select(name='Urgency')
+                                option(value='11') 11 days
+                                option(value='12') 12 days
+                                option(value='13') 13 days
+                                option(value='14') 14 days
+                                option(value='15') 15 days
+                            .w-100
+                            .col-md-3
+                                label Writer level
+                                br
+                                select(name='Writer_level')
+                                option(value='High_School') High School
+                                option(value='Nunc') Nunc
+                                option(value='consequat') consequat
+                                option(value='ipsum') ipsum
+                                option(value='sit') sit
+                            .col-md-3
+                                label Number of pages
+                                br
+                                select(name='Number_of_pages')
+                                option(value='3') 3 pages
+                                option(value='4') 4 pages
+                                option(value='5') 5 pages
+                                option(value='6') 6 pages
+                                option(value='7') 7 pages
+                            .col-md-3
+                                label Currency
+                                br
+                                select(name='Currency')
+                                option(value='USD') USD
+                                option(value='EUR') EUR
+                            .row.justify-content-between.align-items-center.align-center
+                            .col-12.col-md-4.col-lg-4
+                                p
+                                | TOTAL PRICE: 
+                                span 15.99 USD
+                            .col-8.offset-4.col-md-4.col-lg-4
+                                .btn
+                                a(href='#') ORDER NOW
+                section.some-reasons
+                .row.align-items-center.info
+                    .col-12.col-sm-11
+                    h2 Some Reasons to Choose Us
+                    .d-none.d-sm-block.col-sm-1.align-center
+                    a(href='#')
+                        i.fa.fa-question-circle
+                .row
+                    .col-md-3
+                    img.img-width(src='../img/home/foto-2.png', alt='foto-2')
+                    .col-md-9
+                    h3 Dissertation requires a lot of hard work, time and energy
+                    p
+                        | Unless you plan to build a career in professional writing, your dissertation could be the
+                        | most difficult writing assignment you have ever had. Dissertation writing is the final
+                        | stage that a student has to pass before he or she will be recognized as an equal in
+                        | their chosen field. It evaluates many things, including a student's knowledge of a
+                        | topic, their ability to come up with thoughts and ideas on their own, and to present
+                        | these thoughts and ideas to their peers. Therefore, you should have no doubts in the
+                        | quality of your dissertation when presenting it for review to your dissertation
+                        | committee.
+                    p
+                        | Dissertation writing requires a large amount of energy, hard work, and time. No matter
+                        | what educational level the paper is for, it is not something that you can take lightly
+                        | and rush through. Specialized treatment and proper research are mandatory when it comes
+                        | to writing a dissertation. Since we understand the amount of work and effort that
+                        | students face when creating their dissertations, we provide professional writing
+                        | assistance to students of all levels. We are ready to help you with any portion of your
+                        | dissertation writing assignments, and have a list of writers and researchers with
+                        | extensive experience in numerous fields.
+                    .btn
+                        a(href='#') read more »
+                .row
+                    .col-md-3
+                    img.img-width(src='../img/home/foto-3.png', alt='foto-2')
+                    .col-md-9
+                    h3 Dissertation requires a lot of hard work, time and energy
+                    p
+                        | Unless you plan to build a career in professional writing, your dissertation could be the
+                        | most difficult writing assignment you have ever had. Dissertation writing is the final
+                        | stage that a student has to pass before he or she will be recognized as an equal in
+                        | their chosen field. It evaluates many things, including a student's knowledge of a
+                        | topic, their ability to come up with thoughts and ideas on their own, and to present
+                        | these thoughts and ideas to their peers. Therefore, you should have no doubts in the
+                        | quality of your dissertation when presenting it for review to your dissertation
+                        | committee.
+                    p
+                        | Unless you plan to build a career in professional writing, your dissertation could be the
+                        | most difficult writing assignment you have ever had. Dissertation writing is the final
+                        | stage that a student has to pass before he or she will be recognized as an equal in
+                        | their chosen field. It evaluates many things, including a student's knowledge of a
+                        | topic, their ability to come up with thoughts and ideas on their own, and to present
+                        | these thoughts and ideas to their peers. Therefore, you should have no doubts in the
+                        | quality of your dissertation when presenting it for review to your dissertation
+                        | committee.
+                    .btn
+                        a(href='#') read more »
+                .row
+                    .col-md-3
+                    img.img-width(src='../img/home/foto-4.png', alt='foto-2')
+                    .col-md-9
+                    h3 Dissertation requires a lot of hard work, time and energy
+                    p
+                        | Unless you plan to build a career in professional writing, your dissertation could be the
+                        | most difficult writing assignment you have ever had. Dissertation writing is the final
+                        | stage that a student has to pass before he or she will be recognized as an equal in
+                        | their chosen field. It evaluates many things, including a student's knowledge of a
+                        | topic, their ability to come up with thoughts and ideas on their own, and to present
+                        | these thoughts and ideas to their peers. Therefore, you should have no doubts in the
+                        | quality of your dissertation when presenting it for review to your dissertation
+                        | committee.
+                    p
+                        | Dissertation writing requires a large amount of energy, hard work, and time. No matter
+                        | what educational level the paper is for, it is not something that you can take lightly
+                        | and rush through. Specialized treatment and proper research are mandatory when it comes
+                        | to writing a dissertation. Since we understand the amount of work and effort that
+                        | students face when creating their dissertations, we provide professional writing
+                        | assistance to students of all levels. We are ready to help you with any portion of your
+                        | dissertation writing assignments, and have a list of writers and researchers with
+                        | extensive experience in numerous fields.
+                    .btn
+                        a(href='#') read more »
+                .row.d-none.d-sm-block
+                    .col-md-12.align-center
+                    p
+                        | At GreatDissertation.com, we have spent years helping students cope with the burden of
+                        | major written assignments. GreatDissertation.com can provide the best possible assistance in
+                        | achieving your academic goals while leaving you time and energy to keep up with the rest
+                        | of life’s demands. At GreatDissertation.com, our team of writers, researchers, editors and
+                        | customer assistants can help you cope with the toughest writing assignment, no matter
+                        | what academic level or assigned topic it would be. Rather than struggling your way through
+                        | the days and weeks of research, assembling an outline, writing and rewriting the paper and
+                        | then trying to fit it all into the assigned format, why not let the professional writing team
+                        | of GreatDissertation.com do the hard work for you?
+                    img.align-center(src='../img/home/banner-1.png', alt='banner', width='492', height='77')
+                    p
+                        | At GreatDissertation.com, we have spent years helping students cope with the burden of
+                        | major written assignments. GreatDissertation.com can provide the best possible assistance in
+                        | achieving your academic goals while leaving you time and energy to keep up with the rest
+                        | of life’s demands. At GreatDissertation.com, our team of writers, researchers, editors and
+                        | customer assistants can help you cope with the toughest writing assignment, no matter
+                        | what academic level or assigned topic it would be. Rather than struggling your way through
+                        | the days and weeks of research, assembling an outline, writing and rewriting the paper and
+                        | then trying to fit it all into the assigned format, why not let the professional writing team
+                        | of GreatDissertation.com do the hard work for you?
+                    img(src='../img/home/banner-2.png', alt='banner-2', width='490', height='75')
+                    p
+                        | Our customer support team is always here to answer your questions, take your suggestions
+                        | or provide information 24/7. You can contact our customer care team by email, telephone or
+                        | live chat. No matter what you need, or when you need it, GreatDissertation.com is here to
+                        | help you. For complete contact details, please, go to the ‘Contact Us’ page on this
+                        | website.
+                    p
+                        | At GreatDissertation.com, our purpose is to provide students with extra help they need to
+                        | make their academic experience as successful as possible. Whether you simply don’t have
+                        | time to deal with the paper, are uncertain how to approach that major writing project,
+                        | or  just need a critical eye to edit your existing paper, GreatDissertation.com is an ideal
+                        | ally in assisting you to reach your academic goals. Whenever you need help in writing a
+                        | thesis or dissertation, remember that GreatDissertation.com is the best source for academic
+                        | writing. So relax, call us today, and let us take the worry out of your next writing
+                        | assignment.
+                .row.justify-content-center.padding-top-bottom
+                    .col-8.col-sm-4.col-md-3.align-center
+                    .btn-order
+                        a(href='#') Order now!
+                    .col-8.col-sm-4.col-md-3.align-center
+                    .btn-live
+                        a(href='#') Live chat
+            .d-none.d-lg-block.col-lg-3.col-xl-2.right-sidebar
+            .row.bg-yellow
+            .row
+                .col-md-12
+                .social
+                    a(href='')
+                    i.fab.fa-twitter
+                    a(href='')
+                    i.fab.fa-facebook-f
+                    a(href='')
+                    i.fab.fa-pinterest-p
+                    a(href='')
+                    i.fab.fa-instagram
+                    a(href='')
+                    i.fab.fa-google-plus-g
+            .row
+                .col-md-12.no-padding-left
+                .we-guarantee
+                    header We guarantee
+                    .rectangle-1
+                    .rectangle-2
+                        ul
+                        li 100% Satisfaction
+                        li 100% Money Back Guarantee
+                        li Free Revisions
+                        li Delivery on deadline
+                        li Strict adherence to any citation
+                        li Specialized journals to ensure in
+                        li Graduate writers in your special
+                        li Up-to-date sources
+                        li Professionalism in conducting deep
+                        li Never resold to any customer
+                        li Never redistributed or posted
+                        .btn
+                        a(href='#') Read more »
+            .row
+                .col-md-12.no-padding-left
+                .discount
+                    header Discounts
+                    .rectangle-1
+                    .rectangle-2
+                        p
+                        | We provide special discounts
+                        br
+                        span for returning clients:
+                        .discount-list
+                        .number
+                            span 5%
+                        .text
+                            .text-1
+                            span discount
+                            .text-2
+                            span for more than
+                            .text-3
+                            | 20 
+                            span pages
+                        .discount-list
+                        .number
+                            span 10%
+                        .text
+                            .text-1
+                            span discount
+                            .text-2
+                            span for more than
+                            .text-3
+                            | 50 
+                            span pages
+                        .discount-list
+                        .number
+                            span 15%
+                        .text
+                            .text-1
+                            span discount
+                            .text-2
+                            span for more than
+                            .text-3
+                            | 100 
+                            span pages
+            .row
+                .col-md-12.no-padding-left
+                .faq
+                    header FAQ
+                    .rectangle-1
+                    .rectangle-2
+                        ul
+                        li
+                            a(href='#') What type of service does GreatDissertation. com provide?
+                        li
+                            a(href='#') How can GreatDissertation. com help me?
+                        li
+                            a(href='#') How does GreatDissertation. com protect my privacy?s
+                        li
+                            a(href='#')
+                            | What format does GreatDissertation. com normally use for the papers
+                            | they write?
+                        li
+                            a(href='#') Can GreatDissertation. com write a paper on any topic?
+                        .btn
+                        a(href='#') Read more »
+            .row
+                .col-md-12.no-padding-left
+                .chat
+                    header Testimonials
+                    .rectangle-1
+                    .rectangle-2.align-center
+                        .chat-text
+                        p
+                            a(href='#')
+                            | Myles Redding, Omaha, NE
+                            i.far.fa-comment
+                        p
+                            | My Zoology thesis had a short deadline shorter than I thought it had. I had
+                            | miswritten the date on my calendar. When I realized this, I turned to ...
+                        .btn
+                            a(href='#') Read more »
+        footer
+        .container-fluid
+            .row.yellow-line
+            .row.justify-content-around.d-none.d-lg-block.list
+            .col-lg-auto.text
+                a(href='#') Home
+                br
+                a(href='#') About us
+                br
+                a(href='#') Why us
+                br
+                a(href='#') Guarantees
+                br
+                a(href='#') FAQ
+            .col-lg-auto.text
+                a(href='#') Buy dissertation
+                br
+                a(href='#') Prices
+                br
+                a(href='#') Testimonials
+                br
+                a(href='#') How it works
+                br
+                a(href='#') Contact us
+            .col-lg-auto.text
+                a(href='#') Dissertation
+                br
+                a(href='#') Dissertation abstract
+                br
+                a(href='#') Research proposal
+                br
+                a(href='#') Thesis
+                br
+                a(href='#') Thesis proposal
+            .col-lg-auto.text
+                a(href='#') Editing
+                br
+                a(href='#') Proofreading
+                br
+                a(href='#') Free Essays
+                br
+                a(href='#') APA Dissertation Editing and the Rules
+                br
+                a(href='#') Tips for Writing a Literature Review
+            .col-lg-auto.text
+                a(href='#') Complete the Research for a Dissertation
+                br
+                a(href='#') The Dissertation Template
+                br
+                a(href='#') How to Write a Dissertation Abstract
+                br
+                a(href='#') How to Write a Thesis Statement
+                br
+                a(href='#') How to Write Acknowledgements
+            .row.footer-info
+            .col-lg-6.justify-content-between.align-self-start
+                .footer-info-logo
+                .logo-footer
+                .text-footer
+                    span @ 2009-2017. GreatDissertation.com. All rights reserved
+                    br
+                    span Custom dissertations writing service
+            .col-lg-6.justify-content-between.d-none.d-lg-block
+                .contact-info
+                a(href='#') Live chat
+                a(href='#') Terms and Conditions
+                a(href='#') Privacy Policy
+                a(href='#') Delivery Policy
+                .contact-info-phone
+                    span Toll free:
+                    a(href='#') 1(888)901-7803
+                    span Call us:
+                    a(href='#') 1(646)963-6691
+                .contact-info-text
+                    | The website is owned and operated by Global Soft Group Corp, BVI
+            .row.footer-pay.d-none.d-sm-block
+            .col-12
+            .row.d-sm-none
+            .col-md-12.align-center
+                .social
+                a(href='')
+                    i.fab.fa-twitter
+                a(href='')
+                    i.fab.fa-facebook-f
+                a(href='')
+                    i.fab.fa-pinterest-p
+                a(href='')
+                    i.fab.fa-instagram
+                a(href='')
+                    i.fab.fa-google-plus-g
+        script(src='../js/common.js')
