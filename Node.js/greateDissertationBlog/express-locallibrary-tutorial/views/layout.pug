@@ -1,0 +1,31 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    // <base href="/">
+    title Great Dissertation
+    | &#x9;
+    meta(name='description', content='')
+    | &#x9;
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    | &#x9;
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    // Template Basic Images Start
+    meta(property='og:image', content='path/to/image.jpg')
+    | &#x9;
+    link(rel='icon', href='../images/favicon/favicon.ico')
+    | &#x9;
+    link(rel='apple-touch-icon', sizes='180x180', href='../images/favicon/apple-touch-icon-180x180.png')
+    // Template Basic Images End
+    // Custom Browsers Color Start
+    meta(name='theme-color', content='#000')
+    // Custom Browsers Color End
+    link(rel='stylesheet', type='text/css', href='/stylesheets/main.css')
+body
+  include includes/site-header.pug
+  .container-fluid
+    .row
+      include includes/left-sidebar.pug
+      block content
+      include includes/right-sidebar.pug 
+  include includes/site-footer.pug 
