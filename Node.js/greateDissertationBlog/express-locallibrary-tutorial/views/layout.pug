@@ -17,15 +17,10 @@ html(lang='en')
     | &#x9;
     link(rel='apple-touch-icon', sizes='180x180', href='../images/favicon/apple-touch-icon-180x180.png')
     // Template Basic Images End
-    // Custom Browsers Color Start
-    meta(name='theme-color', content='#000')
-    // Custom Browsers Color End
     link(rel='stylesheet', type='text/css', href='/stylesheets/main.css')
 body
   include includes/site-header.pug
-  .container-fluid
-    .row
-      include includes/left-sidebar.pug
-      block content
-      include includes/right-sidebar.pug 
+
+  block content
+
   include includes/site-footer.pug 

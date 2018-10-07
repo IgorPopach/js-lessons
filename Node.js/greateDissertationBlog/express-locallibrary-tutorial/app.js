@@ -9,11 +9,13 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+const mongoose = require("mongoose");
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-app.locals.basedir = path.join(__dirname, 'views');
+// app.locals.basedir = path.join(__dirname, 'views');
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -40,5 +42,11 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+mongoose.connect('mongodb://Igor:popach150188@ds125263.mlab.com:25263/blog')
+    .then (() => console.log('connected...'))
+    .catch(error => console.log(error))
+
+require('./model/modelBlog');
 
 module.exports = app;

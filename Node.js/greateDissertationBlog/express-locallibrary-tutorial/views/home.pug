@@ -1,222 +1,229 @@
 extends layout
 
 block content
-    .col-12.col-lg-9.col-xl-8.main-content
-      .container-fluid
-        section.home
-          .row
-            .col-md-12
-              h1 Home
-          .row
-            .col-md-3
-              img.img-width(src='../../images/home/foto-1.png', alt='foto-1')
-            .col-md-9
-              p
-                | The years each of us spends in the academic world are filled with conflicting emotions.
-                | First and foremost is the anticipation of entering the ‘real world’ of job market, but
-                | this excitement is often overshadowed by the constant stress of study overload and
-                | growing academic demands. The more years you spend in the academic world, the greater
-                | these demands become. Studying for tests and examinations, along with the inevitable
-                | written assignments and research projects, all of which must be explored, compiled and
-                | handed-in in the shortest possible time frame. It can sometimes lead to emotional and
-                | physical overload and burnout. This pressure is even more intense when a student is
-                | forced to juggle their time between study and personal life, participating in sports
-                | programs and holding down a job. Some students are able to magically handle all of these
-                | demands without apparent difficulty while others can feel overwhelmed by the constant
-                | stress of too much work and too little time to go around.
-          .row
-            .col-md.align-center
-              .price-calculator
-                header
-                  | Get a price quote
-                .price-calculator-border
-                  .price-calculator-table
-                    .row.justify-content-around
-                      .col-md-3
-                        label Type of assignment
-                        br
-                        select(name='Type_of_assignment')
-                          option(value='Essay') Essay
-                          option(value='Nunc') Nunc
-                          option(value='consequat') consequat 
-                          option(value='ipsum') ipsum
-                          option(value='sit') sit
-                      .col-md-3
-                        label Spacing
-                        br
-                        select(name='Spacing')
-                          option(value='Double_spaced') Double spaced
-                          option(value='Nunc') Nunc
-                          option(value='consequat') consequat
-                          option(value='ipsum') ipsum
-                          option(value='sit') sit
-                      .col-md-3
-                        label Urgency
-                        br
-                        select(name='Urgency')
-                          option(value='11') 11 days
-                          option(value='12') 12 days
-                          option(value='13') 13 days
-                          option(value='14') 14 days
-                          option(value='15') 15 days
-                      .w-100
-                      .col-md-3
-                        label Writer level
-                        br
-                        select(name='Writer_level')
-                          option(value='High_School') High School
-                          option(value='Nunc') Nunc
-                          option(value='consequat') consequat
-                          option(value='ipsum') ipsum
-                          option(value='sit') sit
-                      .col-md-3
-                        label Number of pages
-                        br
-                        select(name='Number_of_pages')
-                          option(value='3') 3 pages
-                          option(value='4') 4 pages
-                          option(value='5') 5 pages
-                          option(value='6') 6 pages
-                          option(value='7') 7 pages
-                      .col-md-3
-                        label Currency
-                        br
-                        select(name='Currency')
-                          option(value='USD') USD
-                          option(value='EUR') EUR
-                    .row.justify-content-between.align-items-center.align-center
-                      .col-12.col-md-4.col-lg-4
-                        p
-                          | TOTAL PRICE: 
-                          span 15.99 USD
-                      .col-8.offset-4.col-md-4.col-lg-4
-                        .btn
-                          a(href='#') ORDER NOW
-        section.some-reasons
-          .row.align-items-center.info
-            .col-12.col-sm-11
-              h2 Some Reasons to Choose Us
-            .d-none.d-sm-block.col-sm-1.align-center
-              a(href='#')
-                i.fa.fa-question-circle
-          .row
-            .col-md-3
-              img.img-width(src='../../images/home/foto-2.png', alt='foto-2')
-            .col-md-9
-              h3 Dissertation requires a lot of hard work, time and energy
-              p
-                | Unless you plan to build a career in professional writing, your dissertation could be the
-                | most difficult writing assignment you have ever had. Dissertation writing is the final
-                | stage that a student has to pass before he or she will be recognized as an equal in
-                | their chosen field. It evaluates many things, including a student's knowledge of a
-                | topic, their ability to come up with thoughts and ideas on their own, and to present
-                | these thoughts and ideas to their peers. Therefore, you should have no doubts in the
-                | quality of your dissertation when presenting it for review to your dissertation
-                | committee.
-              p
-                | Dissertation writing requires a large amount of energy, hard work, and time. No matter
-                | what educational level the paper is for, it is not something that you can take lightly
-                | and rush through. Specialized treatment and proper research are mandatory when it comes
-                | to writing a dissertation. Since we understand the amount of work and effort that
-                | students face when creating their dissertations, we provide professional writing
-                | assistance to students of all levels. We are ready to help you with any portion of your
-                | dissertation writing assignments, and have a list of writers and researchers with
-                | extensive experience in numerous fields.
-              .btn
-                a(href='#') read more »
-          .row
-            .col-md-3
-              img.img-width(src='../../images/home/foto-3.png', alt='foto-2')
-            .col-md-9
-              h3 Dissertation requires a lot of hard work, time and energy
-              p
-                | Unless you plan to build a career in professional writing, your dissertation could be the
-                | most difficult writing assignment you have ever had. Dissertation writing is the final
-                | stage that a student has to pass before he or she will be recognized as an equal in
-                | their chosen field. It evaluates many things, including a student's knowledge of a
-                | topic, their ability to come up with thoughts and ideas on their own, and to present
-                | these thoughts and ideas to their peers. Therefore, you should have no doubts in the
-                | quality of your dissertation when presenting it for review to your dissertation
-                | committee.
-              p
-                | Unless you plan to build a career in professional writing, your dissertation could be the
-                | most difficult writing assignment you have ever had. Dissertation writing is the final
-                | stage that a student has to pass before he or she will be recognized as an equal in
-                | their chosen field. It evaluates many things, including a student's knowledge of a
-                | topic, their ability to come up with thoughts and ideas on their own, and to present
-                | these thoughts and ideas to their peers. Therefore, you should have no doubts in the
-                | quality of your dissertation when presenting it for review to your dissertation
-                | committee.
-              .btn
-                a(href='#') read more »
-          .row
-            .col-md-3
-              img.img-width(src='../../images/home/foto-4.png', alt='foto-2')
-            .col-md-9
-              h3 Dissertation requires a lot of hard work, time and energy
-              p
-                | Unless you plan to build a career in professional writing, your dissertation could be the
-                | most difficult writing assignment you have ever had. Dissertation writing is the final
-                | stage that a student has to pass before he or she will be recognized as an equal in
-                | their chosen field. It evaluates many things, including a student's knowledge of a
-                | topic, their ability to come up with thoughts and ideas on their own, and to present
-                | these thoughts and ideas to their peers. Therefore, you should have no doubts in the
-                | quality of your dissertation when presenting it for review to your dissertation
-                | committee.
-              p
-                | Dissertation writing requires a large amount of energy, hard work, and time. No matter
-                | what educational level the paper is for, it is not something that you can take lightly
-                | and rush through. Specialized treatment and proper research are mandatory when it comes
-                | to writing a dissertation. Since we understand the amount of work and effort that
-                | students face when creating their dissertations, we provide professional writing
-                | assistance to students of all levels. We are ready to help you with any portion of your
-                | dissertation writing assignments, and have a list of writers and researchers with
-                | extensive experience in numerous fields.
-              .btn
-                a(href='#') read more »
-          .row.d-none.d-sm-block
-            .col-md-12.align-center
-              p
-                | At GreatDissertation.com, we have spent years helping students cope with the burden of
-                | major written assignments. GreatDissertation.com can provide the best possible assistance in
-                | achieving your academic goals while leaving you time and energy to keep up with the rest
-                | of life’s demands. At GreatDissertation.com, our team of writers, researchers, editors and
-                | customer assistants can help you cope with the toughest writing assignment, no matter
-                | what academic level or assigned topic it would be. Rather than struggling your way through
-                | the days and weeks of research, assembling an outline, writing and rewriting the paper and
-                | then trying to fit it all into the assigned format, why not let the professional writing team
-                | of GreatDissertation.com do the hard work for you?
-              img.align-center(src='../../images/home/banner-1.png', alt='banner', width='492', height='77')
-              p
-                | At GreatDissertation.com, we have spent years helping students cope with the burden of
-                | major written assignments. GreatDissertation.com can provide the best possible assistance in
-                | achieving your academic goals while leaving you time and energy to keep up with the rest
-                | of life’s demands. At GreatDissertation.com, our team of writers, researchers, editors and
-                | customer assistants can help you cope with the toughest writing assignment, no matter
-                | what academic level or assigned topic it would be. Rather than struggling your way through
-                | the days and weeks of research, assembling an outline, writing and rewriting the paper and
-                | then trying to fit it all into the assigned format, why not let the professional writing team
-                | of GreatDissertation.com do the hard work for you?
-              img(src='../../images/home/banner-2.png', alt='banner-2', width='490', height='75')
-              p
-                | Our customer support team is always here to answer your questions, take your suggestions
-                | or provide information 24/7. You can contact our customer care team by email, telephone or
-                | live chat. No matter what you need, or when you need it, GreatDissertation.com is here to
-                | help you. For complete contact details, please, go to the ‘Contact Us’ page on this
-                | website.
-              p
-                | At GreatDissertation.com, our purpose is to provide students with extra help they need to
-                | make their academic experience as successful as possible. Whether you simply don’t have
-                | time to deal with the paper, are uncertain how to approach that major writing project,
-                | or  just need a critical eye to edit your existing paper, GreatDissertation.com is an ideal
-                | ally in assisting you to reach your academic goals. Whenever you need help in writing a
-                | thesis or dissertation, remember that GreatDissertation.com is the best source for academic
-                | writing. So relax, call us today, and let us take the worry out of your next writing
-                | assignment.
-          .row.justify-content-center.padding-top-bottom
-            .col-8.col-sm-4.col-md-3.align-center
-              .btn-order
-                a(href='#') Order now!
-            .col-8.col-sm-4.col-md-3.align-center
-              .btn-live
-                a(href='#') Live chat
+  .container-fluid
+    .row
+
+      include includes/left-sidebar.pug
+
+      .col-12.col-lg-9.col-xl-8.main-content
+        .container-fluid
+          section.home
+            .row
+              .col-md-12
+                h1 Home
+            .row
+              .col-md-3
+                img.img-width(src='../images/home/foto-1.png', alt='foto-1')
+              .col-md-9
+                p
+                  | The years each of us spends in the academic world are filled with conflicting emotions.
+                  | First and foremost is the anticipation of entering the ‘real world’ of job market, but
+                  | this excitement is often overshadowed by the constant stress of study overload and
+                  | growing academic demands. The more years you spend in the academic world, the greater
+                  | these demands become. Studying for tests and examinations, along with the inevitable
+                  | written assignments and research projects, all of which must be explored, compiled and
+                  | handed-in in the shortest possible time frame. It can sometimes lead to emotional and
+                  | physical overload and burnout. This pressure is even more intense when a student is
+                  | forced to juggle their time between study and personal life, participating in sports
+                  | programs and holding down a job. Some students are able to magically handle all of these
+                  | demands without apparent difficulty while others can feel overwhelmed by the constant
+                  | stress of too much work and too little time to go around.
+            .row
+              .col-md.align-center
+                .price-calculator
+                  header
+                    | Get a price quote
+                  .price-calculator-border
+                    .price-calculator-table
+                      .row.justify-content-around
+                        .col-md-3
+                          label Type of assignment
+                          br
+                          select(name='Type_of_assignment')
+                            option(value='Essay') Essay
+                            option(value='Nunc') Nunc
+                            option(value='consequat') consequat 
+                            option(value='ipsum') ipsum
+                            option(value='sit') sit
+                        .col-md-3
+                          label Spacing
+                          br
+                          select(name='Spacing')
+                            option(value='Double_spaced') Double spaced
+                            option(value='Nunc') Nunc
+                            option(value='consequat') consequat
+                            option(value='ipsum') ipsum
+                            option(value='sit') sit
+                        .col-md-3
+                          label Urgency
+                          br
+                          select(name='Urgency')
+                            option(value='11') 11 days
+                            option(value='12') 12 days
+                            option(value='13') 13 days
+                            option(value='14') 14 days
+                            option(value='15') 15 days
+                        .w-100
+                        .col-md-3
+                          label Writer level
+                          br
+                          select(name='Writer_level')
+                            option(value='High_School') High School
+                            option(value='Nunc') Nunc
+                            option(value='consequat') consequat
+                            option(value='ipsum') ipsum
+                            option(value='sit') sit
+                        .col-md-3
+                          label Number of pages
+                          br
+                          select(name='Number_of_pages')
+                            option(value='3') 3 pages
+                            option(value='4') 4 pages
+                            option(value='5') 5 pages
+                            option(value='6') 6 pages
+                            option(value='7') 7 pages
+                        .col-md-3
+                          label Currency
+                          br
+                          select(name='Currency')
+                            option(value='USD') USD
+                            option(value='EUR') EUR
+                      .row.justify-content-between.align-items-center.align-center
+                        .col-12.col-md-4.col-lg-4
+                          p
+                            | TOTAL PRICE: 
+                            span 15.99 USD
+                        .col-8.offset-4.col-md-4.col-lg-4
+                          .btn
+                            a(href='#') ORDER NOW
+          section.some-reasons
+            .row.align-items-center.info
+              .col-12.col-sm-11
+                h2 Some Reasons to Choose Us
+              .d-none.d-sm-block.col-sm-1.align-center
+                a(href='#')
+                  i.fa.fa-question-circle
+            .row
+              .col-md-3
+                img.img-width(src='../images/home/foto-2.png', alt='foto-2')
+              .col-md-9
+                h3 Dissertation requires a lot of hard work, time and energy
+                p
+                  | Unless you plan to build a career in professional writing, your dissertation could be the
+                  | most difficult writing assignment you have ever had. Dissertation writing is the final
+                  | stage that a student has to pass before he or she will be recognized as an equal in
+                  | their chosen field. It evaluates many things, including a student's knowledge of a
+                  | topic, their ability to come up with thoughts and ideas on their own, and to present
+                  | these thoughts and ideas to their peers. Therefore, you should have no doubts in the
+                  | quality of your dissertation when presenting it for review to your dissertation
+                  | committee.
+                p
+                  | Dissertation writing requires a large amount of energy, hard work, and time. No matter
+                  | what educational level the paper is for, it is not something that you can take lightly
+                  | and rush through. Specialized treatment and proper research are mandatory when it comes
+                  | to writing a dissertation. Since we understand the amount of work and effort that
+                  | students face when creating their dissertations, we provide professional writing
+                  | assistance to students of all levels. We are ready to help you with any portion of your
+                  | dissertation writing assignments, and have a list of writers and researchers with
+                  | extensive experience in numerous fields.
+                .btn
+                  a(href='#') read more »
+            .row
+              .col-md-3
+                img.img-width(src='../images/home/foto-3.png', alt='foto-2')
+              .col-md-9
+                h3 Dissertation requires a lot of hard work, time and energy
+                p
+                  | Unless you plan to build a career in professional writing, your dissertation could be the
+                  | most difficult writing assignment you have ever had. Dissertation writing is the final
+                  | stage that a student has to pass before he or she will be recognized as an equal in
+                  | their chosen field. It evaluates many things, including a student's knowledge of a
+                  | topic, their ability to come up with thoughts and ideas on their own, and to present
+                  | these thoughts and ideas to their peers. Therefore, you should have no doubts in the
+                  | quality of your dissertation when presenting it for review to your dissertation
+                  | committee.
+                p
+                  | Unless you plan to build a career in professional writing, your dissertation could be the
+                  | most difficult writing assignment you have ever had. Dissertation writing is the final
+                  | stage that a student has to pass before he or she will be recognized as an equal in
+                  | their chosen field. It evaluates many things, including a student's knowledge of a
+                  | topic, their ability to come up with thoughts and ideas on their own, and to present
+                  | these thoughts and ideas to their peers. Therefore, you should have no doubts in the
+                  | quality of your dissertation when presenting it for review to your dissertation
+                  | committee.
+                .btn
+                  a(href='#') read more »
+            .row
+              .col-md-3
+                img.img-width(src='../images/home/foto-4.png', alt='foto-2')
+              .col-md-9
+                h3 Dissertation requires a lot of hard work, time and energy
+                p
+                  | Unless you plan to build a career in professional writing, your dissertation could be the
+                  | most difficult writing assignment you have ever had. Dissertation writing is the final
+                  | stage that a student has to pass before he or she will be recognized as an equal in
+                  | their chosen field. It evaluates many things, including a student's knowledge of a
+                  | topic, their ability to come up with thoughts and ideas on their own, and to present
+                  | these thoughts and ideas to their peers. Therefore, you should have no doubts in the
+                  | quality of your dissertation when presenting it for review to your dissertation
+                  | committee.
+                p
+                  | Dissertation writing requires a large amount of energy, hard work, and time. No matter
+                  | what educational level the paper is for, it is not something that you can take lightly
+                  | and rush through. Specialized treatment and proper research are mandatory when it comes
+                  | to writing a dissertation. Since we understand the amount of work and effort that
+                  | students face when creating their dissertations, we provide professional writing
+                  | assistance to students of all levels. We are ready to help you with any portion of your
+                  | dissertation writing assignments, and have a list of writers and researchers with
+                  | extensive experience in numerous fields.
+                .btn
+                  a(href='#') read more »
+            .row.d-none.d-sm-block
+              .col-md-12.align-center
+                p
+                  | At GreatDissertation.com, we have spent years helping students cope with the burden of
+                  | major written assignments. GreatDissertation.com can provide the best possible assistance in
+                  | achieving your academic goals while leaving you time and energy to keep up with the rest
+                  | of life’s demands. At GreatDissertation.com, our team of writers, researchers, editors and
+                  | customer assistants can help you cope with the toughest writing assignment, no matter
+                  | what academic level or assigned topic it would be. Rather than struggling your way through
+                  | the days and weeks of research, assembling an outline, writing and rewriting the paper and
+                  | then trying to fit it all into the assigned format, why not let the professional writing team
+                  | of GreatDissertation.com do the hard work for you?
+                img.align-center(src='../images/home/banner-1.png', alt='banner', width='492', height='77')
+                p
+                  | At GreatDissertation.com, we have spent years helping students cope with the burden of
+                  | major written assignments. GreatDissertation.com can provide the best possible assistance in
+                  | achieving your academic goals while leaving you time and energy to keep up with the rest
+                  | of life’s demands. At GreatDissertation.com, our team of writers, researchers, editors and
+                  | customer assistants can help you cope with the toughest writing assignment, no matter
+                  | what academic level or assigned topic it would be. Rather than struggling your way through
+                  | the days and weeks of research, assembling an outline, writing and rewriting the paper and
+                  | then trying to fit it all into the assigned format, why not let the professional writing team
+                  | of GreatDissertation.com do the hard work for you?
+                img(src='../images/home/banner-2.png', alt='banner-2', width='490', height='75')
+                p
+                  | Our customer support team is always here to answer your questions, take your suggestions
+                  | or provide information 24/7. You can contact our customer care team by email, telephone or
+                  | live chat. No matter what you need, or when you need it, GreatDissertation.com is here to
+                  | help you. For complete contact details, please, go to the ‘Contact Us’ page on this
+                  | website.
+                p
+                  | At GreatDissertation.com, our purpose is to provide students with extra help they need to
+                  | make their academic experience as successful as possible. Whether you simply don’t have
+                  | time to deal with the paper, are uncertain how to approach that major writing project,
+                  | or  just need a critical eye to edit your existing paper, GreatDissertation.com is an ideal
+                  | ally in assisting you to reach your academic goals. Whenever you need help in writing a
+                  | thesis or dissertation, remember that GreatDissertation.com is the best source for academic
+                  | writing. So relax, call us today, and let us take the worry out of your next writing
+                  | assignment.
+            .row.justify-content-center.padding-top-bottom
+              .col-8.col-sm-4.col-md-3.align-center
+                .btn-order
+                  a(href='#') Order now!
+              .col-8.col-sm-4.col-md-3.align-center
+                .btn-live
+                  a(href='#') Live chat
+                  
+      include includes/right-sidebar.pug

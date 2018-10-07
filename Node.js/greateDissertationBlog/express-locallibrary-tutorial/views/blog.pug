@@ -1,221 +1,221 @@
-extends layout-blog
+extends layout
 
 block content
-.container-fluid.main-content-blog
-  section.blog-header
-    .row
-      .col-12.col-lg-8.offset-lg-1.col-xl-8.offset-xl-2
-        .container-fluid
+  .container-fluid.main-content-blog
+    section.blog-header
+      .row
+        .col-12.col-lg-8.offset-lg-1.col-xl-8.offset-xl-2
+          .container-fluid
+            .row
+              .col-md-12.blog-header-name
+                h1 Blog
+            .row
+              .col-12.links
+                .row.justify-content-between
+                  .col-12.col-md-4.posts
+                    a(href='#')
+                      | Popular posts
+                    a(href='#')
+                      | Recent posts
+                  .col-12.col-md-6.category.align-right
+                    a(href='#')
+                      | Category1
+                    a(href='#')
+                      | Category2
+                    a(href='#')
+                      | Category3
+                    a(href='#')
+                      | Category4
+                .row.tags
+                  a(href='#') Tag word
+                  a(href='#') Tag word
+                  a(href='#') Tag word
+                  a(href='#') Tag word
+                  a(href='#') Tag word
+                  a(href='#') Tag word
+                  a(href='#') Tag word
+                  a(href='#') Tag word
+                  a(href='#') Tag word
+                  a(href='#') Tag word
+                  a(href='#') Tag word
+                  a(href='#') Tag word
+                  a(href='#') Tag word
+                  a(href='#') Tag word
+                  a(href='#') Tag word
+                  a(href='#') Tag word
+                  a(href='#') Tag word
+                  a(href='#') Tag word
+                  a(href='#') Tag word
+                  a(href='#') Tag word
+                  a(href='#') Tag word
+                  a(href='#') Tag word
+                  a(href='#') Tag word
+                  a(href='#') Tag word
+                  a(href='#') Tag word
+        .d-none.d-lg-block.col-lg-3.col-xl-2.right-sidebar
+          .row.bg-yellow
           .row
-            .col-md-12.blog-header-name
-              h1 Blog
-          .row
-            .col-12.links
-              .row.justify-content-between
-                .col-12.col-md-4.posts
-                  a(href='#')
-                    | Popular posts
-                  a(href='#')
-                    | Recent posts
-                .col-12.col-md-6.category.align-right
-                  a(href='#')
-                    | Category1
-                  a(href='#')
-                    | Category2
-                  a(href='#')
-                    | Category3
-                  a(href='#')
-                    | Category4
-              .row.tags
-                a(href='#') Tag word
-                a(href='#') Tag word
-                a(href='#') Tag word
-                a(href='#') Tag word
-                a(href='#') Tag word
-                a(href='#') Tag word
-                a(href='#') Tag word
-                a(href='#') Tag word
-                a(href='#') Tag word
-                a(href='#') Tag word
-                a(href='#') Tag word
-                a(href='#') Tag word
-                a(href='#') Tag word
-                a(href='#') Tag word
-                a(href='#') Tag word
-                a(href='#') Tag word
-                a(href='#') Tag word
-                a(href='#') Tag word
-                a(href='#') Tag word
-                a(href='#') Tag word
-                a(href='#') Tag word
-                a(href='#') Tag word
-                a(href='#') Tag word
-                a(href='#') Tag word
-                a(href='#') Tag word
-      .d-none.d-lg-block.col-lg-3.col-xl-2.right-sidebar
-        .row.bg-yellow
+            .col-md-12
+              .social
+                a(href='')
+                  i.fab.fa-twitter
+                a(href='')
+                  i.fab.fa-facebook-f
+                a(href='')
+                  i.fab.fa-pinterest-p
+                a(href='')
+                  i.fab.fa-instagram
+                a(href='')
+                  i.fab.fa-google-plus-g
+    section.blog-content
+      .container-fluid
         .row
-          .col-md-12
-            .social
-              a(href='')
-                i.fab.fa-twitter
-              a(href='')
-                i.fab.fa-facebook-f
-              a(href='')
-                i.fab.fa-pinterest-p
-              a(href='')
-                i.fab.fa-instagram
-              a(href='')
-                i.fab.fa-google-plus-g
-  section.blog-content
-    .container-fluid
-      .row
-        .col-12.col-md-4
-          .blog-item
-            img.img-width(src='../img/blog/41161667-arizona-wallpapers.png', alt='arizona')
-            .blog-item-text
-              h2 Lorem Ipsum Dolor Sit Amet
-              ul
-                li February 28, 2014
-                li Category
-                li
-                  a(href='#') 2 Comments
-              p
-                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultrices hendrerit
-                | ipsum, ac
-                | dignissim elit tincidunt ut. Aliquam erat volutpat. Vestibulum sit , vel maximus nulla.
-                | Ut
-                | vitae
-                | commodo arcu. Donec in efficitur ligula. Praesent ac magna id neque tincidunt posuere.
-                | Vestibulum
-                | aliquet felis ullamcorper, elementum nibh eu, mollis augue...
-              .row.tags
-                a(href='#') Tag word
-                a(href='#') Tag word
-                a(href='#') Tag word
-              a.read-more(href='./blogInside') Read More
-        .col-12.col-md-4
-          .blog-item
-            img.img-width(src='../img/blog/blog-2.png', alt='blog-3')
-            .blog-item-text
-              h2 Lorem Ipsum Dolor Sit Amet
-              ul
-                li February 28, 2014
-                li Category
-                li
-                  a(href='#') 2 Comments
-              p
-                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultrices hendrerit
-                | ipsum, ac
-                | dignissim elit tincidunt ut. Aliquam erat volutpat. Vestibulum sit , vel maximus nulla.
-                | Ut
-                | vitae
-                | commodo arcu. Donec in efficitur ligula. Praesent ac magna id neque tincidunt posuere.
-                | Vestibulum
-                | aliquet felis ullamcorper, elementum nibh eu, mollis augue...
-              .row.tags
-                a(href='#') Tag word
-                a(href='#') Tag word
-                a(href='#') Tag word
-              a.read-more(href='./blogInside') Read More
-        .col-12.col-md-4
-          .blog-item
-            img.img-width(src='../img/blog/blog-3.png', alt='blog-3')
-            .blog-item-text
-              h2 Lorem Ipsum Dolor Sit Amet
-              ul
-                li February 28, 2014
-                li Category
-                li
-                  a(href='#') 2 Comments
-              p
-                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultrices hendrerit
-                | ipsum, ac
-                | dignissim elit tincidunt ut. Aliquam erat volutpat. Vestibulum sit , vel maximus nulla.
-                | Ut
-                | vitae
-                | commodo arcu. Donec in efficitur ligula. Praesent ac magna id neque tincidunt posuere.
-                | Vestibulum
-                | aliquet felis ullamcorper, elementum nibh eu, mollis augue...
-              .row.tags
-                a(href='#') Tag word
-                a(href='#') Tag word
-                a(href='#') Tag word
-              a.read-more(href='./blogInside') Read More
-      .row
-        .col-12.col-md-4
-          .blog-item
-            img.img-width(src='../img/blog/blog-4.png', alt='blog-4')
-            .blog-item-text
-              h2 Lorem Ipsum Dolor Sit Amet
-              ul
-                li February 28, 2014
-                li Category
-                li
-                  a(href='#') 2 Comments
-              p
-                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultrices hendrerit
-                | ipsum, ac
-                | dignissim elit tincidunt ut. Aliquam erat volutpat. Vestibulum sit , vel maximus nulla.
-                | Ut
-                | vitae
-                | commodo arcu. Donec in efficitur ligula. Praesent ac magna id neque tincidunt posuere.
-                | Vestibulum
-                | aliquet felis ullamcorper, elementum nibh eu, mollis augue...
-              .row.tags
-                a(href='#') Tag word
-                a(href='#') Tag word
-                a(href='#') Tag word
-              a.read-more(href='./blogInside') Read More
-        .col-12.col-md-4
-          .blog-item
-            img.img-width(src='../img/blog/blog-5.png', alt='blog-5')
-            .blog-item-text
-              h2 Lorem Ipsum Dolor Sit Amet
-              ul
-                li February 28, 2014
-                li Category
-                li
-                  a(href='#') 2 Comments
-              p
-                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultrices hendrerit
-                | ipsum, ac
-                | dignissim elit tincidunt ut. Aliquam erat volutpat. Vestibulum sit , vel maximus nulla.
-                | Ut
-                | vitae
-                | commodo arcu. Donec in efficitur ligula. Praesent ac magna id neque tincidunt posuere.
-                | Vestibulum
-                | aliquet felis ullamcorper, elementum nibh eu, mollis augue...
-              .row.tags
-                a(href='#') Tag word
-                a(href='#') Tag word
-                a(href='#') Tag word
-              a.read-more(href='./blogInside') Read More
-        .col-12.col-md-4
-          .blog-item
-            img.img-width(src='../img/blog/blog-6.png', alt='blog-6')
-            .blog-item-text
-              h2 Lorem Ipsum Dolor Sit Amet
-              ul
-                li February 28, 2014
-                li Category
-                li
-                  a(href='#') 2 Comments
-              p
-                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultrices hendrerit
-                | ipsum, ac
-                | dignissim elit tincidunt ut. Aliquam erat volutpat. Vestibulum sit , vel maximus nulla.
-                | Ut
-                | vitae
-                | commodo arcu. Donec in efficitur ligula. Praesent ac magna id neque tincidunt posuere.
-                | Vestibulum
-                | aliquet felis ullamcorper, elementum nibh eu, mollis augue...
-              .row.tags
-                a(href='#') Tag word
-                a(href='#') Tag word
-                a(href='#') Tag word
-              a.read-more(href='./blogInside') Read More
-      .row.justify-content-center
-        .col-12.col-md-4
-          .load-more.align-center
-            a(href='#') LOAD MORE
+          .col-12.col-md-4
+            .blog-item
+              img.img-width(src='../img/blog/41161667-arizona-wallpapers.png', alt='arizona')
+              .blog-item-text
+                h2 Lorem Ipsum Dolor Sit Amet
+                ul
+                  li February 28, 2014
+                  li Category
+                  li
+                    a(href='#') 2 Comments
+                p
+                  | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultrices hendrerit
+                  | ipsum, ac
+                  | dignissim elit tincidunt ut. Aliquam erat volutpat. Vestibulum sit , vel maximus nulla.
+                  | Ut
+                  | vitae
+                  | commodo arcu. Donec in efficitur ligula. Praesent ac magna id neque tincidunt posuere.
+                  | Vestibulum
+                  | aliquet felis ullamcorper, elementum nibh eu, mollis augue...
+                .row.tags
+                  a(href='#') Tag word
+                  a(href='#') Tag word
+                  a(href='#') Tag word
+                a.read-more(href='./blogInside') Read More
+          .col-12.col-md-4
+            .blog-item
+              img.img-width(src='../img/blog/blog-2.png', alt='blog-3')
+              .blog-item-text
+                h2 Lorem Ipsum Dolor Sit Amet
+                ul
+                  li February 28, 2014
+                  li Category
+                  li
+                    a(href='#') 2 Comments
+                p
+                  | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultrices hendrerit
+                  | ipsum, ac
+                  | dignissim elit tincidunt ut. Aliquam erat volutpat. Vestibulum sit , vel maximus nulla.
+                  | Ut
+                  | vitae
+                  | commodo arcu. Donec in efficitur ligula. Praesent ac magna id neque tincidunt posuere.
+                  | Vestibulum
+                  | aliquet felis ullamcorper, elementum nibh eu, mollis augue...
+                .row.tags
+                  a(href='#') Tag word
+                  a(href='#') Tag word
+                  a(href='#') Tag word
+                a.read-more(href='./blogInside') Read More
+          .col-12.col-md-4
+            .blog-item
+              img.img-width(src='../img/blog/blog-3.png', alt='blog-3')
+              .blog-item-text
+                h2 Lorem Ipsum Dolor Sit Amet
+                ul
+                  li February 28, 2014
+                  li Category
+                  li
+                    a(href='#') 2 Comments
+                p
+                  | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultrices hendrerit
+                  | ipsum, ac
+                  | dignissim elit tincidunt ut. Aliquam erat volutpat. Vestibulum sit , vel maximus nulla.
+                  | Ut
+                  | vitae
+                  | commodo arcu. Donec in efficitur ligula. Praesent ac magna id neque tincidunt posuere.
+                  | Vestibulum
+                  | aliquet felis ullamcorper, elementum nibh eu, mollis augue...
+                .row.tags
+                  a(href='#') Tag word
+                  a(href='#') Tag word
+                  a(href='#') Tag word
+                a.read-more(href='./blogInside') Read More
+        .row
+          .col-12.col-md-4
+            .blog-item
+              img.img-width(src='../img/blog/blog-4.png', alt='blog-4')
+              .blog-item-text
+                h2 Lorem Ipsum Dolor Sit Amet
+                ul
+                  li February 28, 2014
+                  li Category
+                  li
+                    a(href='#') 2 Comments
+                p
+                  | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultrices hendrerit
+                  | ipsum, ac
+                  | dignissim elit tincidunt ut. Aliquam erat volutpat. Vestibulum sit , vel maximus nulla.
+                  | Ut
+                  | vitae
+                  | commodo arcu. Donec in efficitur ligula. Praesent ac magna id neque tincidunt posuere.
+                  | Vestibulum
+                  | aliquet felis ullamcorper, elementum nibh eu, mollis augue...
+                .row.tags
+                  a(href='#') Tag word
+                  a(href='#') Tag word
+                  a(href='#') Tag word
+                a.read-more(href='./blogInside') Read More
+          .col-12.col-md-4
+            .blog-item
+              img.img-width(src='../img/blog/blog-5.png', alt='blog-5')
+              .blog-item-text
+                h2 Lorem Ipsum Dolor Sit Amet
+                ul
+                  li February 28, 2014
+                  li Category
+                  li
+                    a(href='#') 2 Comments
+                p
+                  | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultrices hendrerit
+                  | ipsum, ac
+                  | dignissim elit tincidunt ut. Aliquam erat volutpat. Vestibulum sit , vel maximus nulla.
+                  | Ut
+                  | vitae
+                  | commodo arcu. Donec in efficitur ligula. Praesent ac magna id neque tincidunt posuere.
+                  | Vestibulum
+                  | aliquet felis ullamcorper, elementum nibh eu, mollis augue...
+                .row.tags
+                  a(href='#') Tag word
+                  a(href='#') Tag word
+                  a(href='#') Tag word
+                a.read-more(href='./blogInside') Read More
+          .col-12.col-md-4
+            .blog-item
+              img.img-width(src='../img/blog/blog-6.png', alt='blog-6')
+              .blog-item-text
+                h2 Lorem Ipsum Dolor Sit Amet
+                ul
+                  li February 28, 2014
+                  li Category
+                  li
+                    a(href='#') 2 Comments
+                p
+                  | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultrices hendrerit
+                  | ipsum, ac
+                  | dignissim elit tincidunt ut. Aliquam erat volutpat. Vestibulum sit , vel maximus nulla.
+                  | Ut
+                  | vitae
+                  | commodo arcu. Donec in efficitur ligula. Praesent ac magna id neque tincidunt posuere.
+                  | Vestibulum
+                  | aliquet felis ullamcorper, elementum nibh eu, mollis augue...
+                .row.tags
+                  a(href='#') Tag word
+                  a(href='#') Tag word
+                  a(href='#') Tag word
+                a.read-more(href='./blogInside') Read More
+        .row.justify-content-center
+          .col-12.col-md-4
+            .load-more.align-center
+              a(href='#') LOAD MORE
