@@ -8,9 +8,8 @@ router.get('/', function(req, res, next) {
 router.get('/cool/', function(req, res, next) {
   res.render('cool', { title: 'cool' });
 });
-router.get('/home', function(err, html) {
-  console.log("Home running");
-  res.send(html);
+router.get('/home/', function(err, res) {
+  res.render('home');
 });
 router.get('/blog/', function(req, res, next) {
   res.render('blog');
