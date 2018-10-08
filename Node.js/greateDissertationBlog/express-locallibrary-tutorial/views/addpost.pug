@@ -1,0 +1,47 @@
+extends layout
+
+block content
+  .container-fluid.main-content-blog
+    section.blog-header
+      .row
+        .col-12.col-lg-8.offset-lg-1.col-xl-8.offset-xl-2
+          .container-fluid
+            .row
+              .col-md-12.blog-header-name
+                h1 Add New Post
+            .row
+              .col-12.links
+                .row.justify-content-between
+                  .col-12.col-md-4.posts
+                    a(href='#')
+                      | Popular posts
+                    a(href='#')
+                      | Recent posts
+                  .col-12.col-md-6.category.align-right
+                    a(href='#')
+                      | Category1
+                    a(href='#')
+                      | Category2
+                    a(href='#')
+                      | Category3
+                    a(href='#')
+                      | Category4
+        .d-none.d-lg-block.col-lg-3.col-xl-2.right-sidebar
+          .row.bg-yellow
+          .row
+            .col-md-12
+              .social
+                a(href='')
+                  i.fab.fa-twitter
+                a(href='')
+                  i.fab.fa-facebook-f
+                a(href='')
+                  i.fab.fa-pinterest-p
+                a(href='')
+                  i.fab.fa-instagram
+                a(href='')
+                  i.fab.fa-google-plus-g
+    section.blog-content
+      .container-fluid
+        .row
+          
