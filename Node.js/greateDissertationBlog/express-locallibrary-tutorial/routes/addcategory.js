@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
   allCategories.find({})
         .then(categories => {
             console.log(categories);
-            res.render('addcategory', {category: category, title: 'Add New Category'});
+            res.render('addcategory', {categories: categories, title: 'Add New Category'});
         })
         .catch(e => console.log(e))
 });
