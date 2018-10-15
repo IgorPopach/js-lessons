@@ -1,0 +1,45 @@
+extends layout
+
+block content
+  .container-fluid.main-content-blog
+    section.blog-header
+      .row
+        .col-12.col-lg-8.offset-lg-1.col-xl-8.offset-xl-2
+          .container-fluid
+            .row
+              .col-md-12.blog-header-name
+                h1=title
+            .row
+              .col-12.links
+                ul.errors
+                    if errors
+                        each error, i in errors
+                            li.alert.alert-danger #{error.msg}
+                .col-sm-6
+                    form(method='post')
+                        .form-group
+                            label Add new author
+                            input.form-control(name='author', type='text')
+                        input.btn.btn-default(name='submit', type='submit', value='Save')
+                .col-sm-6
+                    if authors
+                        h3 Author list
+                        ul
+                            for author in authors
+                                li=author.author
+        .d-none.d-lg-block.col-lg-3.col-xl-2.right-sidebar
+          .row.bg-yellow
+          .row
+            .col-md-12
+              .social
+                a(href='')
+                  i.fab.fa-twitter
+                a(href='')
+                  i.fab.fa-facebook-f
+                a(href='')
+                  i.fab.fa-pinterest-p
+                a(href='')
+                  i.fab.fa-instagram
+                a(href='')
+                  i.fab.fa-google-plus-g
+          

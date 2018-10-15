@@ -8,13 +8,15 @@ block content
           .container-fluid
             .row
               .col-md-12.blog-header-name
-                h1 Blog
+                h1=title
             .row
               .col-12.links
                 .row.justify-content-between
                   .col-12.col-md-4.posts
                     a(href='./addpost')
                       | Add post
+                    a(href='./addauthor')
+                      | Add author
                     a(href='./addcategory')
                       | Add category
                 .row.justify-content-between
