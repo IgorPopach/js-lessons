@@ -26,40 +26,13 @@ block content
                     a(href='#')
                       | Recent posts
                   .col-12.col-md-6.category.align-right
-                    a(href='#')
-                      | Category1
-                    a(href='#')
-                      | Category2
-                    a(href='#')
-                      | Category3
-                    a(href='#')
-                      | Category4
-                .row.tags
-                  a(href='#') Tag word
-                  a(href='#') Tag word
-                  a(href='#') Tag word
-                  a(href='#') Tag word
-                  a(href='#') Tag word
-                  a(href='#') Tag word
-                  a(href='#') Tag word
-                  a(href='#') Tag word
-                  a(href='#') Tag word
-                  a(href='#') Tag word
-                  a(href='#') Tag word
-                  a(href='#') Tag word
-                  a(href='#') Tag word
-                  a(href='#') Tag word
-                  a(href='#') Tag word
-                  a(href='#') Tag word
-                  a(href='#') Tag word
-                  a(href='#') Tag word
-                  a(href='#') Tag word
-                  a(href='#') Tag word
-                  a(href='#') Tag word
-                  a(href='#') Tag word
-                  a(href='#') Tag word
-                  a(href='#') Tag word
-                  a(href='#') Tag word
+                    .category-list
+                      .category-list
+                        if categories
+                          for category in categories
+                            ul
+                              li
+                                a(href='#')=category.category
         .d-none.d-lg-block.col-lg-3.col-xl-2.right-sidebar
           .row.bg-yellow
           .row
