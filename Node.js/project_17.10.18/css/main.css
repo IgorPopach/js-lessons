@@ -26,6 +26,12 @@ input {
     height: 16px;
     margin-top: 5px; 
 }
+
+#movies {
+    max-width: 300px;
+    text-align: center;
+}
+
 #writeDog, #removeDog, #showDog, #writeCat, #removeCat, #showCat, #showCat {
     width: 30%;
     background: rgb(125,126,125); /* Old browsers */
