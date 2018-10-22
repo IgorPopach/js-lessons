@@ -3,7 +3,7 @@ var router = express.Router();
 const mongoose = require('mongoose');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/add', function(req, res, next) {
   require('../models/modelAuthor');
   const allAuthors = mongoose.model('author');
   allAuthors.find({})
@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
         .catch(e => console.log(e))
 });
 
-router.post('/', function (req, res, next) {
+router.post('/add', function (req, res, next) {
   let author = req.body.author;
 
   req.checkBody('author', 'Author field is required').notEmpty();
@@ -36,7 +36,7 @@ router.post('/', function (req, res, next) {
           .then(() => {
               req.flash('success', 'Authors Added');
               res.location('/');
-              res.redirect('/addauthor');
+              res.redirect('/addauthor/add');
           })
           .catch(e => console.log(e))
   }

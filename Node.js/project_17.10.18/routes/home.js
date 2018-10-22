@@ -8,9 +8,13 @@ const axios = require('axios');
 
 
 function home(req, res) {
+    // if (req.method === 'POST') {
+    //     console.log('Omg! 0_o')
+    // }
     // res.setCode = 200;
     axios.get('http://www.omdbapi.com/?s=predator&apikey=e3232cc1')
     .then(response => {
+        
         const Search = response.data.Search;
         console.log(Search[0]);
         let html = pug.renderFile('./views/index.pug', {
@@ -20,6 +24,7 @@ function home(req, res) {
             Type: Search[0].Type,
             Poster: Search[0].Poster,
         });
+
         res.writeHead(200,{ 'Content-Type': 'text/html' });
         res.end(html);
     })
