@@ -10,15 +10,25 @@
 </head>
 
 <body>
-    <form action="/search" method="GET">
-        <input type="text" placeholder="Enter film" name="title"/>
-        <button type="submit">Search</button>
-    </form>
     <div class="container">
-        <h3 class="mx-auto mt-2 mb-5">{{Title}}</h3>
-        <img src={{Poster}} alt={{Title}} />
-    </div>
-
+        <div class="row">
+            <form action="/search" method="GET">
+                <input type="text" placeholder="Enter film" name="title"/>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        <div class="row poster">
+            <h3>{{Title}}</h3>
+            <img src={{Poster}} alt={{Title}} />
+            <ul>
+                <li><span>Type: </span>{{Type}}</li>
+                <li><span>Released: </span>{{Released}}</li>
+                <li><span>imdbRating: </span>{{imdbRating}}</li>
+                <li><span>Genre: </span>{{Genre}}</li>
+                <li><span>Actors: </span>{{Actors}}</li>
+                <li class="Plot">{{Plot}}</li>
+            </ul>
+        </div>
     </div>
 
     <script src="../public/common.js"></script>

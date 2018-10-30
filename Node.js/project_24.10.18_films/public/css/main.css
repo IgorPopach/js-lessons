@@ -1,3 +1,25 @@
 body {
     background-color:rgb(6, 101, 165);
+    text-align: center;
+}
+
+.poster {
+    max-width: 300px;
+    margin: 0 auto;
+}
+.poster ul {
+    list-style-type: none;
+    text-align: left;
+    padding: 10px;
+}
+.poster ul li span {
+    font-weight: 600;
+    text-decoration: underline;
+    color: rgb(44, 43, 1);
+}
+.Plot {
+    margin-top: 15px;
+    font-size: 18px;
+    color: rgb(70, 41, 5);
+    text-align: justify;
 }
