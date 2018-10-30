@@ -1,0 +1,21 @@
+.panda-image {
+    background-color: #282c34;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Panda {
+    display: inline-block;
+    animation: panda-spin infinite 20s linear;
+}
+
+@keyframes panda-spin {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}

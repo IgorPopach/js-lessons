@@ -4,7 +4,9 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Person from './components/person/person';
+import Panda from './components/panda/Panda';
 
+ReactDOM.render(<Panda />, document.querySelector('.panda-image'));
 ReactDOM.render(<App />, document.getElementById('root'));
 ReactDOM.render(<Person />, document.getElementById('person'));
 ReactDOM.render(<Person />, document.querySelector('.person'));
