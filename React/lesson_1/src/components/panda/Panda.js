@@ -9,7 +9,8 @@ class Panda extends Component {
                 <img src={PandaImage} className="Panda" alt="Panda" />
                 <img src={PandaImage} className="Panda" alt="Panda" />
             </div>
-        )}
+        );
+    }
 }
 
 export default Panda;
