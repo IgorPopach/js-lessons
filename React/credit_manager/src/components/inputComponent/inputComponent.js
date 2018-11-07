@@ -10,9 +10,9 @@ class InputComponent extends Component {
             amount: "",
             term: "",
         };
-        this.inputHendler = this.inputHendler.bind(this);
+        this.submitHendler = this.submitHendler.bind(this);
     }
-    inputHendler = (event) => {
+    submitHendler = (event) => {
         event.preventDefault();
         console.log(this.refs.clientName.value + "\n" + this.refs.clientSurname.value + "\n" + this.refs.amount.value + "\n" + this.refs.term.value);
         this.setState({
