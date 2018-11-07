@@ -10,7 +10,6 @@ class InputComponent extends Component {
             amount: "",
             term: "",
         };
-        this.submitHendler = this.submitHendler.bind(this);
     }
     submitHendler = (event) => {
         event.preventDefault();
@@ -21,6 +20,7 @@ class InputComponent extends Component {
             amount:this.refs.amount.value,
             term:this.refs.term.value,
         })
+        console.log(" state: " + this.state.name);
         let count = 0;
         const usersRef = firebase.database().ref("users/");
         usersRef.on("child_added", function(data) {
@@ -65,7 +65,7 @@ class InputComponent extends Component {
                             placeholder=" Enter term" required ref={"term"}></input>
                     </div>
                     <div>
-                        <button type="button" className="btn btn-default submit" name="submit" onClick={this.inputHendler}><i className="fa fa-paper-plane"
+                        <button type="button" className="btn btn-default submit" name="submit" onClick={this.submitHendler}><i className="fa fa-paper-plane"
                             aria-hidden="true"></i>
                             Send
                     </button>

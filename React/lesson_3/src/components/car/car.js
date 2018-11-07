@@ -6,9 +6,9 @@ class Car extends React.Component{
         return (
             <div className="Css">
                 <h2>Car:</h2>
-                <div className="model">{this.props.model}</div>
-                <div className="type">{this.props.type}</div>
-                <div className="color">{this.props.color}</div>
+                <div className="model">"model": {this.props.model}</div>
+                <div className="type">"type": {this.props.type}</div>
+                <div className="color">"color": {this.props.color}</div>
                 <button onClick={this.props.changeTitle}>Get Car</button>
             </div>
         )
