@@ -3,8 +3,15 @@ import React from 'react';
 class Header extends React.Component {
     state={
         nav: [
-            'Home',
-            'About',
+            {
+                label: "Home",
+                link: "/"
+            },
+            {
+                label: "About",
+                link: "/about"
+            },
+            
             'contact',
             'How it Works'
         ]
@@ -13,9 +20,7 @@ class Header extends React.Component {
         return(
             <div>
                 <nav>
-                    {this.state.nav.map((iterator) => {
-                    return <a>{iterator}</a>
-                })}
+                    {this.state.nav.map((item) => (<a key={item.link} href="#">{item.label}</a>))}
                 </nav>
             </div>
         )
