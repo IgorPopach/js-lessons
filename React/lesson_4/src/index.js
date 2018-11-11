@@ -1,15 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Header from './components/header/header'
+import './index.css';
+import Headmenu from './components/headmenu/headmenu';
+import Posts from './components/posts/posts';
+import Footer from './components/footer/footer';
 
 class Main extends React.Component{
-    state={
-
-    }
     render(){
         return(
             <div>
-                <Header />
+                <div>
+                    <Headmenu />
+                </div>
+                    <Posts />
+                <div>
+                    <Footer />
+                </div>
             </div>
         )
     }
