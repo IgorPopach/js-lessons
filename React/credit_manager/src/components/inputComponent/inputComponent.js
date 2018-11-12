@@ -18,17 +18,17 @@ class InputComponent extends Component {
     }
 
     handleNameChange = (event) => {
-        this.setState({name: event.target.value})
+        this.setState({name: event.target.value.toUpperCase()})
     }
 
     handleSurnameChange = (event) => {
-        this.setState({surname: event.target.value})
+        this.setState({surname: event.target.value.toUpperCase()})
     }
     handleAmountChange = (event) => {
-        this.setState({amount: event.target.value})
+        this.setState({amount: event.target.value.toUpperCase()})
     }
     handleTermChange = (event) => {
-        this.setState({term: event.target.value})
+        this.setState({term: event.target.value.toUpperCase()})
     }
 
     submitHendler = (event) => {
@@ -39,7 +39,7 @@ class InputComponent extends Component {
         usersRef.on("child_added", function(data) {
             let userBase = data.val();
             //fix me start!!!!
-            console.log("this.state.name: " + this.state.name);
+            console.log("this.state.name: " + this.state);
             if ( userBase.username === this.state.name && userBase.surname === this.state.surname) {
                 count++;
             }
@@ -81,7 +81,7 @@ class InputComponent extends Component {
                             placeholder=" Enter term" value={this.state.term} onChange={this.handleTermChange}></input>
                     </div>
                     <div>
-                        <button type="submit" className="btn btn-default submit" name="submit"><i className="fa fa-paper-plane"
+                        <button type="submit" className="btn btn-default submit" value="Submit"><i className="fa fa-paper-plane"
                             aria-hidden="true"></i>
                             Send
                         </button>
