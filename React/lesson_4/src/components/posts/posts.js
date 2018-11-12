@@ -74,9 +74,9 @@ class Posts extends React.Component {
                             ))}
                         </div>
                         <div className="col-4">
-                            {this.state.selectedPost && (
+                            {this.state.selectedPost !== null ? 
                                 <Aside title={this.state.selectedPost.title} description={this.state.selectedPost.description} imgSource={this.state.selectedPost.imgSource}/>
-                            )}
+                            : <div>Text not selected</div>}
                         </div>
                 </div>
             </div>
