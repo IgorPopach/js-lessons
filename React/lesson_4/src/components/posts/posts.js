@@ -70,7 +70,7 @@ class Posts extends React.Component {
                 <div className="row">
                         <div className="col-8">
                             {this.state.posts.map(post => (
-                                <Post key={post.id} title={post.title} description={post.description} imgSource={post.imgSource} onClick={this.handleSelectedPost(post)} style={{cursor:'pointer'}} />
+                                <Post key={post.id} title={post.title} description={post.description} imgSource={post.imgSource} onClick={this.handleSelectedPost(post)} />
                             ))}
                         </div>
                         <div className="col-4">

@@ -1,5 +1,15 @@
+nav {
+    background-color: #002b80;
+    opacity: 0.5;
+}
+
 nav a {
     margin: 5px 10px;
     padding: 5px;
-    color: gray;
+    color: rgb(255, 255, 255);
+}
+
+nav a:hover {
+    color: yellow;
+    text-decoration: none;
 }
