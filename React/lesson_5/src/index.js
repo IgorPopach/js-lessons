@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Header from './components/header/header';
+import Content from './components/content/content';
 
 class Main extends React.Component{
     state = {
@@ -12,6 +13,7 @@ class Main extends React.Component{
             <div className="container main">
                 <h2>Main</h2>
                 <Header />
+                <Content />
             </div>
         )
     }
