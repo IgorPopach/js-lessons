@@ -2,8 +2,7 @@ import React from 'react';
 
 function Image(props) {
     return (
-        <div>
-            <p>Image</p>
+        <div onClick={props.onClick}>
             <img src={props.src} alt={props.alt} />
         </div>
     )

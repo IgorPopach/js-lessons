@@ -37,8 +37,8 @@ class Content extends React.Component {
       }));
     }
 
-    handleSelectedImage(info){
-        this.setState({selectedImage: info});
+    handleSelectedImage = (imgInfo) => () => {
+        this.setState({selectedImage: imgInfo});
         console.log(this.state.selectedImage);
     }
     render() {
@@ -51,26 +51,26 @@ class Content extends React.Component {
                         </button>
                     </div>
                 </div>
-                    {this.state.isToggleOn !== false ?
-                        this.state.images.map((e) => {
-                            return (
-                                <div className="row">
-                                    <div className="col-8">
-                                        <Image key={e.id} src={e.src} alt={e.name} desc={e.desc} title={e.title} onClick={this.handleSelectedImage(this.info)} />
-                                    </div>
-                                    <div className="col-4">
-                                        {this.state.selectedImage !== null ? 
-                                        <Aside title={this.state.selectedImage.title} description={this.state.selectedImage.desc} src={this.state.selectedImage.src} alt={this.state.selectedImage.alt} />
-                                        : <div>Image not selected</div>}
-                                    </div>
-                                </div>
-                            )    
-                        })
-                        : <div>Press the button for magic!!!   0_o</div>
-                    } 
+                <div className="row">
+                    <div className="col-8">
+                        {this.state.isToggleOn !== true ?
+                            this.state.images.map((imgInfo) => {
+                                return (
+                                    <Image key={imgInfo.id} src={imgInfo.src} alt={imgInfo.name} desc={imgInfo.desc} title={imgInfo.title} onClick={this.handleSelectedImage(imgInfo)} />
+                                )
+                                })
+                                : <div>Press the button for magic!!!   0_o</div>
+                            } 
+                    </div>
+                    <div className="col-4">
+                        {this.state.selectedImage !== null ? 
+                        <Aside title={this.state.selectedImage.title} description={this.state.selectedImage.desc} src={this.state.selectedImage.src} alt={this.state.selectedImage.alt} />
+                        : <div>Image not selected</div>}
+                    </div>
+                </div>
             </div>
         );
     }
-  }
+}
 
   export default Content;
