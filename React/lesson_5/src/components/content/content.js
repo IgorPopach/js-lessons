@@ -42,35 +42,67 @@ class Content extends React.Component {
         console.log(this.state.selectedImage);
     }
     render() {
+        const styles = {
+            button : {
+                fontSize: "20px",
+                border: "2px solid yellow",
+                borderRadius: "5px",
+                margin: "5px auto",
+                padding: "5px 20px",
+                color: "yellow",
+                backgroundColor: "black",
+                ":hover": {
+                    color: "orange",
+                    border: "2px solid orange",
+                    transition: ".3s",
+                    cursor: "pointer",
+                }
+            },
+            alignCenter: {
+                textAlign: "center",
+            },
+            text: {
+                textAlign: "center",
+                textTransform: "uppercase",
+                fontSize: "18px",
+                color: "yellow",
+                margin: "100px auto",
+            }
+            
+        }
         return (
-            <div className="container mt-4">
+            <div className="container mt-2">
                 <div className="row">
-                    <div className="col-12">
-                        <button onClick={this.handleClick}>
+                    <div className="col-12" style={styles.alignCenter}>
+                        <button onClick={this.handleClick} style={styles.button}>
                             {this.state.isToggleOn ? 'Show' : 'Hide'}
                         </button>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col-8">
+                
+                    
                         {this.state.isToggleOn !== true ?
-                            this.state.images.map((imgInfo) => {
-                                return (
-                                    <Image key={imgInfo.id} src={imgInfo.src} alt={imgInfo.name} desc={imgInfo.desc} title={imgInfo.title} onClick={this.handleSelectedImage(imgInfo)} />
-                                )
-                                })
-                                : <div>Press the button for magic!!!   0_o</div>
-                            } 
-                    </div>
-                    <div className="col-4">
-                        {this.state.selectedImage !== null ? 
-                        <Aside title={this.state.selectedImage.title} description={this.state.selectedImage.desc} src={this.state.selectedImage.src} alt={this.state.selectedImage.alt} />
-                        : <div>Image not selected</div>}
-                    </div>
-                </div>
+                        <div className="row">
+                            <div className="col-8">
+                                {this.state.images.map((imgInfo) => {
+                                    return (<Image key={imgInfo.id} src={imgInfo.src} alt={imgInfo.name} desc={imgInfo.desc} title={imgInfo.title}
+                                        onClick={this.handleSelectedImage(imgInfo)} />)
+                                })}
+                            </div>
+                            <div className="col-4">
+                                {this.state.selectedImage && 
+                                    <Aside title={this.state.selectedImage.title} description={this.state.selectedImage.desc}
+                                    src={this.state.selectedImage.src} alt={this.state.selectedImage.alt} />
+                                }
+                            </div>
+                        </div> :
+                        <div className="row">
+                            <div style={styles.text} >Press the button for magic!!!   0_o</div>
+                        </div>
+                        }  
             </div>
         );
     }
 }
 
-  export default Content;
+  export default Radium(Content);

@@ -23,19 +23,19 @@ class Header extends React.Component{
 
     render(){
         const style= {
-        fontSize: "20px",
-        border: "2px solid yellow",
-        borderRadius: "5px",
-        textDecoration: "none",
-        margin: "5px 10px",
-        padding: "5px",
-        color: "yellow",
-        ":hover": {
-            color: "#4e0480",
-            border: "2px solid #4e0480",
-            transition: ".3s",
-            borderShadow: "2px 2px black"
-        }
+            fontSize: "20px",
+            border: "2px solid yellow",
+            borderRadius: "5px",
+            textDecoration: "none",
+            margin: "15px 10px",
+            padding: "6px 10px",
+            color: "yellow",
+            ":hover": {
+                color: "orange",
+                border: "2px solid orange",
+                transition: ".3s",
+                borderShadow: "2px 2px black"
+            }
         } 
         return (
             <nav className="nav justify-content-center">
