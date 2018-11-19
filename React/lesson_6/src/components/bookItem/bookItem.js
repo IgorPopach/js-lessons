@@ -9,6 +9,10 @@ class BookItem extends React.Component {
         isGoing: false,
         BookItem_class: false,
     }
+
+    arr = [{name:"Tom"}, {name:"Bill"}];
+    
+
     componentDidMount(){
         console.log('componentDidMount');
     }
@@ -43,23 +47,39 @@ class BookItem extends React.Component {
 
     shouldComponentUpdate(nextProps, nextState){
         console.log('shouldComponentUpdate', this.state, nextState);
-        if (nextState.isGoing !== this.state.isGoing) {
+        if (nextState.isGoing !== this.state.isGoing || nextState.price < 2000) {
             return true
         } else {
             return false
         }
     }
+    componentWillUnmount() {
+        console.log('componentWillUnmount')
+    }
+    static getDerivedStateFromProps(nextProps, prevState) {
+        console.log('getDerivedStateFromProps');
+        return prevState;
+    }
+    getSnapshotBeforeUpdate() {
+        console.log('getSnapshotBeforeUpdate')
+    }
+    getInitialState(){
+        return{
+            person: this.arr 
+        };
+    }
     render(){
         let BookItem_class = this.state.BookItem_class ? "BookItem BookItem-action" : "BookItem BookItem-default";
         console.log("render <BookItem />");
+        console.log(this.state)
         return (
             <div className={BookItem_class}>
                 <span className="textAction">{this.state.textAction}</span>
                 <h2>{this.props.title}</h2>
                 <p>{this.props.author}</p>
                 <p>{this.props.description}</p>
-                {/* <input type="text" ref="myPrice"></input>
-                <button type="button" onClick={this.priceRender}>Send</button> */}
+                <input type="text" ref="myPrice"></input>
+                <button type="button" onClick={this.priceRender}>Send</button>
                 <input name="isGoing" type="checkbox" defaultChecked={this.state.isGoing} onChange={this.handleChangeCheck} />
                 <label>Зробити {this.state.textCheckbox}</label>
             </div>
