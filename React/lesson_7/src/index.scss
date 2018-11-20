@@ -13,6 +13,25 @@ code {
     monospace;
 }
 
-.main {
-  background-color: rgb(68, 95, 129);
+body {
+  background-color:rgb(6, 101, 165);
+  text-align: center;
+}
+
+.poster {
+  ul {
+    list-style-type: none;
+    padding: 10px;
+  }
+  li span {
+  font-weight: 600;
+  text-decoration: underline;
+  color: rgb(44, 43, 1);
+  }
+}
+.Plot {
+  margin-top: 15px;
+  font-size: 18px;
+  color: rgb(70, 41, 5);
+  text-align: justify;
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import Content from './components/content/content';
+import './index.scss';
+import Films from './components/films/films';
 
 class Main extends React.Component{
     state = {
@@ -9,8 +9,8 @@ class Main extends React.Component{
     }
     render(){
         return (
-            <div className="container main">
-                <Content />
+            <div className="container-fluid">
+                <Films />
             </div>
         )
     }
