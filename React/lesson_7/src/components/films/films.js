@@ -1,12 +1,14 @@
 import React from 'react';
-import ShowFilm from '../showfilm/showfilm';
+import Film from '../film/film';
 
 class Films extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
         search: null,
-        go: null,
+        error: null,
+        isLoaded: false,
+        items: null
         
       };
       this.handleChange = this.handleChange.bind(this);
@@ -22,23 +24,53 @@ class Films extends React.Component {
         })
     }
     handleSubmit(){
-        const go = this.state.search;
-        this.setState({
-            go: go
-        })
+        fetch(`http://www.omdbapi.com/?s=${this.state.search}&apikey=e3232cc1&`)
+          .then(res => res.json())
+          .then(
+            (result) => {
+              this.setState({
+                isLoaded: true,
+                items: result.Search,
+              });
+            },
+            
+            // Note: it's important to handle errors here
+            // instead of a catch() block so that we don't swallow
+            // exceptions from actual bugs in components.
+            (error) => {
+              this.setState({
+                isLoaded: true,
+                error
+              });
+            }
+        )
     }
     
   
     render() {
-        return (
-            <div>
-                <input type="text" onChange={this.handleChange} />
-                <button type="submit" onClick={this.handleSubmit}>Search</button>
+        const { error, items } = this.state;
+        if (error) {
+            return <div>Error: {error.message}</div>;
+        } else {
+            return (
                 <div>
-                    {this.state.go !== null ? <ShowFilm go={this.state.go}/> : <div>Please Enter film...</div>}
+                    <input type="text" onChange={this.handleChange} />
+                    <button type="submit" onClick={this.handleSubmit}>Search</button>
+                    <div>
+                        {items !== null ? 
+                            <div className="row">
+                                {
+                                    items.map(item => (
+                                        <Film key={item.imdbID} title={item.Title} type={item.Type} year={item.Year} imdb={item.imdbID} src={item.Poster} />
+                                    ))
+                                }
+                            </div> : 
+                            <div>Please Enter film</div>
+                        }
+                    </div>
                 </div>
-            </div>
-        );
+            );
+        }
     }
 }
   
