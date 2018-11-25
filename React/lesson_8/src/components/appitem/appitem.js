@@ -3,7 +3,7 @@ import React from 'react';
 class Appitem extends React.Component {
 
     state = {
-        isOpen: false
+        isOpen: this.props.defaultOpen
     }
 
     showTextHandler = () => {
@@ -13,6 +13,12 @@ class Appitem extends React.Component {
     deleteHandler = () => {
         const key = this.props.id
         this.props.deleteNotes(key)
+    }
+    
+    componentWillReceiveProps(nextProps) {
+        if(nextProps.defaultOpen !== this.props.defaultOpen) this.setState({
+            isOpen: nextProps.defaultOpen
+        })
     }
 
     render(){

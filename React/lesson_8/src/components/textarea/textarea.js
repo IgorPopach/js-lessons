@@ -6,11 +6,15 @@ const textareastyle = {
     margin: '10px 5px',
     paddingLeft: '5px',
     height: '150px',
+    border: '1px solid black', 
+    borderRadius: '5px',
+    backgroundColor: 'rgb(255, 232, 206)'
 }
 const style = {
     margin: '15px -15px',
     border: '1px solid black', 
     borderRadius: '5px',
+    backgroundColor: 'rgb(201, 194, 124)'
 }
 const buttonStyle = {
     display: 'block',
@@ -20,6 +24,9 @@ const inputStyle = {
     display: 'block',
     margin: '10px 5px',
     paddingLeft: '5px',
+    border: '1px solid black', 
+    borderRadius: '5px',
+    backgroundColor: 'rgb(255, 232, 206)'
 }
 
 
@@ -38,6 +45,12 @@ const Textarea = CreateReactClass({
             };
             this.props.handlerNewNotes(note);
         }
+    },
+    shouldComponentUpdate(nextState,nextProps) {
+        return false
+    },
+    componentWillUpdate(){
+        console.log('componentWillUpdate textarea')
     },
     render(){
         return (

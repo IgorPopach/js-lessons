@@ -33,25 +33,24 @@ const App = CreateReactClass({
     },
 
     handlerNewNotes: function (newNote) {
-        const newNotes = this.state.notes.slice();
-        newNotes.unshift(newNote);
-        console.log('newNotes',newNotes);
+        const newNotes = this.state.notes;
+        newNotes.push(newNote);
         this.setState({notes: newNotes});
     },
 
     deleteNotes: function (obj) {
         console.log('obj', obj)
-        const Notes = this.state.notes.slice();
+        const Notes = this.state.notes;
         const newNotes = Notes.filter(note => note.id !== obj.id);
         this.setState({notes: newNotes});
     },
-    
     render(){
         let notesLength = this.state.notes.length;
+        let reverseNotes = this.state.notes.slice().reverse();
         return (
             <div className="container">
                 <Textarea notesLength={notesLength} handlerNewNotes={this.handlerNewNotes} />
-                <Applist notes={this.state.notes} deleteNotes={this.deleteNotes} />
+                <Applist notes={reverseNotes} deleteNotes={this.deleteNotes} />
             </div>
         )
     }

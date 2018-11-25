@@ -7,7 +7,10 @@ const Applist = CreateReactClass({
         return {
           
         };
-      },
+    },
+    componentWillUpdate(){
+        console.log('componentWillUpdate Applist')
+    },
     render(){
         return (
             <div className="row justify-content-center">
