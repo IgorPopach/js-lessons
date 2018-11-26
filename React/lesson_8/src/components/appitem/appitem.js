@@ -30,7 +30,7 @@ class Appitem extends React.Component {
             <div className="col-12 col-md-8" style={divStyle}>
                 <div className="row">
                     <div className="col-10"  style={titleStyle}>
-                        <h3>{this.props.name}</h3>
+                        <h3>{this.props.title}</h3>
                     </div>
                     <div className="col-2">
                         <button onClick={this.showTextHandler} className="btn btn-outline-dark my-1">{this.state.isOpen ? "Hide" : "Show"}</button>

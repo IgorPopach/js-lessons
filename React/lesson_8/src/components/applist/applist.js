@@ -15,7 +15,7 @@ const Applist = CreateReactClass({
         return (
             <div className="row justify-content-center">
                 {this.props.notes.map((e,index) => {
-                    return <Appitem key={e.id} id={e.id} name={e.name} text={e.text} color={e.color} defaultOpen = {index === 0} deleteNotes={() => this.props.deleteNotes(e)} />
+                    return <Appitem key={e.id} id={e.id} title={e.title} text={e.text} color={e.color} defaultOpen = {index === 0} deleteNotes={() => this.props.deleteNotes(e)} />
                 })}
             </div>
         )

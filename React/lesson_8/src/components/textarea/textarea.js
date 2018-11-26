@@ -33,32 +33,46 @@ const inputStyle = {
 const Textarea = CreateReactClass({
     getInitialState () {
         return {
+            title:"",
+            text:"",
+            error:"Please type title and text..."
         };
     },
-    handlerNewNote: function() {
-        if (this.refs.title.value !== '' && this.refs.note.value !== '') {
-            const note = {
-                id: this.props.notesLength + 1,
-                name: this.refs.title.value,
-                text:this.refs.note.value,
-                color: "rgb(201, 149, 87)",
-            };
-            this.props.handlerNewNotes(note);
+    handleInputChange: function(event) {
+        const target = event.target;
+        if (target.name === 'title') {
+            this.setState({title: target.value});
+        }
+        else if (target.name === 'text') {
+            this.setState({text: target.value});
         }
     },
-    shouldComponentUpdate(nextState,nextProps) {
-        return false
+    handlerNewNote: function() {
+        if (this.state.title.length !== 0 && this.state.text.length !== 0) {
+            const note = {
+                id: Date.now(),
+                title: this.state.title,
+                text:this.state.text,
+                color: "rgb(201, 149, 87)",
+            };
+            this.setState({error:""})
+            this.props.handlerNewNotes(note);
+        } else {
+            this.setState({error:"Please type title and text..."})
+        }
     },
     componentWillUpdate(){
         console.log('componentWillUpdate textarea')
     },
     render(){
+        const error = this.state.error !== '' && <p>{this.state.error}</p>
         return (
             <div className="row" style={style}>
                 <div className="col-12">
-                    <input type="text" ref={'title'} placeholder="Title" style={inputStyle} defaultValue='' />
-                    <textarea style={textareastyle} ref={'note'} placeholder="Note..." defaultValue='' />
+                    <input type="text" name='title' placeholder="Title" style={inputStyle} defaultValue='' onChange={this.handleInputChange} />
+                    <textarea style={textareastyle} name='text' placeholder="Note..." defaultValue='' onChange={this.handleInputChange} />
                     <button style={buttonStyle} onClick={this.handlerNewNote} className="btn btn-dark">Add</button>
+                    {error}
                 </div>
             </div>
         )
