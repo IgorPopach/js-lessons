@@ -14,6 +14,11 @@ class Appitem extends React.Component {
         const key = this.props.id
         this.props.deleteNotes(key)
     }
+
+    changeHandler = () => {
+        const key = this.props.id
+        this.props.changeHandler(key)
+    }
     
     componentWillReceiveProps(nextProps) {
         if(nextProps.defaultOpen !== this.props.defaultOpen) this.setState({
@@ -35,6 +40,7 @@ class Appitem extends React.Component {
                     <div className="col-2">
                         <button onClick={this.showTextHandler} className="btn btn-outline-dark my-1">{this.state.isOpen ? "Hide" : "Show"}</button>
                         <button onClick={this.deleteHandler} className="btn btn-outline-danger my-1">Clear</button>
+                        <button onClick={this.changeHandler} className="btn btn-outline-danger my-1">Change Notes</button>
                     </div>
                 </div>
                 <div className="row">

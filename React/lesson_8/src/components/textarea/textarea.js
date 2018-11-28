@@ -50,10 +50,10 @@ const Textarea = CreateReactClass({
     handlerNewNote: function() {
         if (this.state.title.length !== 0 && this.state.text.length !== 0) {
             const note = {
-                id: Date.now(),
-                title: this.state.title,
-                text:this.state.text,
-                color: "rgb(201, 149, 87)",
+                'id': Date.now(),
+                'title': this.state.title,
+                'text':this.state.text,
+                'color': "rgb(201, 149, 87)",
             };
             this.setState({error:""})
             this.props.handlerNewNotes(note);
