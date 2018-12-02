@@ -17,7 +17,7 @@ class Appitem extends React.Component {
 
     changeHandler = () => {
         const key = this.props.id
-        this.props.changeHandler(key)
+        this.props.changeNotes(key)
     }
     
     componentWillReceiveProps(nextProps) {
@@ -34,10 +34,10 @@ class Appitem extends React.Component {
         return (
             <div className="col-12 col-md-8" style={divStyle}>
                 <div className="row">
-                    <div className="col-10"  style={titleStyle}>
+                    <div className="col-8 col-lg-9"  style={titleStyle}>
                         <h3>{this.props.title}</h3>
                     </div>
-                    <div className="col-2">
+                    <div className="col-4 col-lg-3">
                         <button onClick={this.showTextHandler} className="btn btn-outline-dark my-1">{this.state.isOpen ? "Hide" : "Show"}</button>
                         <button onClick={this.deleteHandler} className="btn btn-outline-danger my-1">Clear</button>
                         <button onClick={this.changeHandler} className="btn btn-outline-danger my-1">Change Notes</button>
