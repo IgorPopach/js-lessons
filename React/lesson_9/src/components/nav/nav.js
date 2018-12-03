@@ -5,18 +5,18 @@ class Nav extends React.Component{
     render(){
         return(
             <nav>
-                <ul>
-                    <li>
-                        <NavLink to="/home" activeClassName='activeStyle'>Home</NavLink>
+                <ul className="nav nav-tabs nav-justified">
+                    <li className="nav-item">
+                        <NavLink to="/home" activeClassName="nav-link active">Home</NavLink>
                     </li>
-                    <li>
-                        <NavLink to="/about" activeClassName='activeStyle'>About</NavLink>
+                    <li className="nav-item">
+                        <NavLink to="/about" activeClassName="nav-link active">About</NavLink>
                     </li>
-                    <li>
-                        <NavLink to="/contact-us"  activeClassName='activeStyle'>Contact Us</NavLink>
+                    <li className="nav-item">
+                        <NavLink to="/contact-us" activeClassName="nav-link active">Contact Us</NavLink>
                     </li>
-                    <li>
-                        <NavLink to="/hiw"  activeClassName='activeStyle'>HiW</NavLink>
+                    <li className="nav-item">
+                        <NavLink to="/hiw" activeClassName="nav-link active">HiW</NavLink>
                     </li>
                 </ul>
             </nav>
