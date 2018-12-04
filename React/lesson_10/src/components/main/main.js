@@ -5,7 +5,7 @@ import Router from './../../router';
 export default class Main extends React.Component{
     render(){
         return (
-            <div className="container">
+            <div className="container content">
             <BrowserRouter>
                 <Router>
                 </Router>

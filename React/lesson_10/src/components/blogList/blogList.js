@@ -43,12 +43,12 @@ class BlogList extends React.Component{
     render(){
         console.log('BlogList', this.props)
         return(
-            <div className='row justify-content-center'>
+            <div className='row justify-content-center bcg-style'>
                 {this.state.posts.map((e) => (
                     <BlogItem key={e.id} id={e.id} author={e.author} title={e.title} date={e.date} desc={e.desc} postHandler={this.postHandler} pathName={this.props.match.path} />
                     ))
                 }
-                <button onClick={this.homeHandler}>Home</button>
+                <button onClick={this.homeHandler} className='btn btn-secondary'>Home</button>
             </div>
         )
     }

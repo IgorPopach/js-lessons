@@ -4,7 +4,7 @@ import {NavLink} from 'react-router-dom';
 class Nav extends React.Component{
     render(){
         return(
-            <nav>
+            <nav className='nav-style'>
                 <ul className="nav nav-tabs nav-justified">
                     <li className="nav-item">
                         <NavLink to="/home" activeClassName="nav-link active">Home</NavLink>
