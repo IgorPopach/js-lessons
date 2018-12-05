@@ -27,16 +27,16 @@ const default_posts = [
 
 class BlogList extends React.Component{
     state = {
-        
+        posts: null,
     }
 
     getPosts = () => {
         const posts = JSON.parse(localStorage.getItem('posts'));
         this.setState({ posts, })
     }
-    pushToStorDefaultPosts(){
+    pushToStorDefaultPosts = () => {
         localStorage.setItem('posts', JSON.stringify(default_posts));
-        this.setState({ posts: default_posts, }) // TODO setState underfined
+        this.getPosts()
     }
 
 
@@ -60,10 +60,10 @@ class BlogList extends React.Component{
     }
 
     render(){
-        console.log('BlogList', this.props)
+        console.log('BlogList this.state.posts', this.state.posts)
         return(
             <div className='row justify-content-center bcg-style'>
-                { this.state.posts ? 
+                { this.state.posts !== null ? 
                     this.state.posts.map((e) => (
                         <BlogItem key={e.id} id={e.id} author={e.author} title={e.title} date={e.date} desc={e.desc} postHandler={this.postHandler} pathName={this.props.match.path} />
                     )) :
