@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Counter from './counter';
 import Counter5 from './counter5';
 import './App.css';
-import {PLUS, MINUS} from './actions/actions'; 
+import {PLUS, MINUS, ASYNC} from './actions/actions'; 
 
 class App extends Component {
 
@@ -19,6 +19,7 @@ class App extends Component {
 
         <Counter />
         <Counter5 />
+        <button className='minus' onClick={this.props.onAsync}>Async</button>
       </div>
     );
   }
@@ -38,6 +39,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     onMinus: () => {
       dispatch(MINUS())
+    },
+    onAsync: () => {
+      dispatch(ASYNC())
     }
   }
 }

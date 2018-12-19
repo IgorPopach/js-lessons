@@ -35,3 +35,11 @@ export function MINUS_5(){
         type:Minus_5
     }
 }
+
+export function ASYNC(){
+    return(dispatch) => {
+        setTimeout(() => {
+            dispatch(PLUS_2())
+        },2000)
+    }
+}
