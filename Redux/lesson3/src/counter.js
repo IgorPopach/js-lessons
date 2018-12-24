@@ -6,7 +6,7 @@ import {PLUS_2, MINUS_2} from './actions/actions';
 class Counter extends Component{
     render(){
         return(
-            <div>
+            <div className='counter2'>
             <br />
             <button className='plus' onClick={this.props.onPlus2}>Plus 2</button>
             <button className='minus' onClick={this.props.onMinus2}>Minus 2</button>
